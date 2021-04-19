@@ -1,7 +1,35 @@
-import React from 'react';
-import AdminSidebar from '../AdminDashboard/AdminSidebar/AdminSidebar';
+import React, { useEffect, useState } from 'react';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const ManageServices = () => {
+
+    const [services,setServices] = useState([]);
+    
+
+    
+
+    const loadProducts = () => {
+        fetch('http://localhost:4444/services')
+        .then(res=>res.json())
+        .then(data =>{
+          console.log(data)
+          setServices(data)
+        })
+    }
+    loadProducts();
+    const handleDelete = (id) => {
+        fetch(`http://localhost:4444/deleteService/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    loadProducts();
+                }
+            })
+
+    }
+
     return (
         <div className="row m-2 p-2">
             <div className="col-md-3">
@@ -22,12 +50,15 @@ const ManageServices = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                          {
+                              services.map(service => 
+                                <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td><button>delete</button></td>
-                            </tr>
+                                <td>{service.productName}</td>
+                                <td>{service.price}</td>
+                                <td><button onClick={() => handleDelete(service._id)} className="btn btn-primary">delete</button></td>
+                            </tr>)
+                          }
                           
                         </tbody>
                     </table>

@@ -1,9 +1,11 @@
 import React from 'react';
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useState } from 'react';
 import SplitCardForm from './SplitCardForm';
 
-const SimpleCardForm = ({handlePayment}) => {
+
+
+const SimpleCardForm = ({ handlePayment }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -19,7 +21,7 @@ const SimpleCardForm = ({handlePayment}) => {
 
     const cardElement = elements.getElement(CardElement);
 
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
     });
@@ -28,44 +30,45 @@ const SimpleCardForm = ({handlePayment}) => {
       setPaymentError(error.message);
       setPaymentSuccess(null);
     } else {
-        setPaymentSuccess(paymentMethod.id);
-        setPaymentError(null);
-        handlePayment(paymentMethod.id)
+      setPaymentSuccess(paymentMethod.id);
+      setPaymentError(null);
+      handlePayment(paymentMethod.id, paymentMethod.type)
+      console.log(paymentMethod)
     }
   };
 
   return (
     <div>
-       <div >
-       <form onSubmit={handleSubmit}>
-            <CardElement options={{
-          style: {
-            base: {
-              fontSize: '16px',
-              color: '#424770',
-              '::placeholder': {
-                color: '#aab7c4',
+      <div >
+        <form onSubmit={handleSubmit}>
+          <CardElement options={{
+            style: {
+              base: {
+                fontSize: '16px',
+                color: '#424770',
+                '::placeholder': {
+                  color: '#aab7c4',
+                },
+              },
+              invalid: {
+                color: '#9e2146',
               },
             },
-            invalid: {
-              color: '#9e2146',
-            },
-          },
-        }} />
-            <button className="btn btn-secondary" type="submit" disabled={!stripe}>
-                Pay
+          }} />
+          <button className="btn btn-secondary" type="submit" disabled={!stripe}>
+            Pay
             </button>
         </form>
-       </div>
-        {/* <div>
+      </div>
+      {/* <div>
             <SplitCardForm></SplitCardForm>
         </div> */}
-        {
-            paymentError && <p style={{color: 'red'}}>{paymentError}</p>
-        }
-        { 
-            paymentSuccess && <p style={{color: 'green'}}>Your payment was successful.</p>
-        }
+      {
+        paymentError && <p style={{ color: 'red' }}>{paymentError}</p>
+      }
+      {
+        paymentSuccess && <p style={{ color: 'green' }}>Your payment was successful.</p>
+      }
     </div>
   );
 };

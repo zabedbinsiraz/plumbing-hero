@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import CustomerSidebar from '../CustomerSidebar/CustomerSidebar';
 import { useForm } from "react-hook-form";
+import { UserContext } from '../../../../App';
 
 
 const CustomerReview = () => {
 
     const { register, handleSubmit, watch, errors } = useForm();
     const [addedReview,setAddedReview] = useState(false);
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
     
     const onSubmit = data => {
+        
         const reviewData = {
-            customerName:data.name,
+            photo:loggedInUser.photo,
+            name:data.name,
+            email:loggedInUser.email,
+            rank:data.rank,
             desc:data.desc
         }
         console.log(reviewData)
 
-        const url =`https://localhost:4444/addService`;
+        const url =`http://localhost:4444/addReview`;
         fetch(url,{
             method:'POST',
             headers:{
@@ -47,7 +53,7 @@ const CustomerReview = () => {
                      <br/>
                  <label htmlFor="">Company's Designation</label>
                   <br/>
-               <input className="input" type="text" className="form-control" placeholder="Your Job Post" {...register('name')} />
+               <input className="input" type="text" className="form-control" placeholder="Your Job Post" {...register('rank')} />
                      <br/>
                <label htmlFor="">Description</label>
                  <br/>

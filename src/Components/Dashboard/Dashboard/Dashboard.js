@@ -1,13 +1,20 @@
 import React from 'react';
-import AdminDashboard from '../AdminDashboard/AdminDashboard/AdminDashboard';
+import PrivateRoute from '../../Home/PrivateRoute/PrivateRoute';
+import AdminDashboard from '../AdminDashboard/AdminDashboardMain/AdminDashboard';
 import CustomerDashboard from '../CustomerDashboard/CustomerDashboard/CustomerDashboard';
+
 
 const Dashboard = () => {
     return (
         <div>
-            This is Dashboard
-            <CustomerDashboard></CustomerDashboard>
-            <AdminDashboard></AdminDashboard>
+         
+        <PrivateRoute>
+        <AdminDashboard></AdminDashboard>
+    
+    <CustomerDashboard></CustomerDashboard>
+        </PrivateRoute>
+        
+         
         </div>
     );
 };

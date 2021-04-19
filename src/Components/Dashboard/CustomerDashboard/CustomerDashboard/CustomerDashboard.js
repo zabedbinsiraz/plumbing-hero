@@ -7,7 +7,7 @@ import CustomerReview from '../CustomerReview/CustomerReview'
 const CustomerDashboard = () => {
     return (
         <div>
-            
+          
 
           <Switch>
 
@@ -17,9 +17,7 @@ const CustomerDashboard = () => {
             <Route path="/dashboard/customerReview">
                 <CustomerReview></CustomerReview>
             </Route>
-            <Route path="/dashboard/book">
-                <Book></Book>
-            </Route>
+           
 
           </Switch>
         </div>

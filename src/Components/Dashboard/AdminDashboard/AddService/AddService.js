@@ -1,22 +1,25 @@
-import AdminSidebar from '../AdminDashboard/AdminSidebar/AdminSidebar';
-import React, { useState } from 'react';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { UserContext } from '../../../../App';
 
 const AddService = () => {
 
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);
     const [addedService,setAddedService] = useState(false);
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
 
     const onSubmit = data => {
         const serviceData = {
             productName:data.name,
             imageURL:imageURL,
-            desc:data.desc
+            desc:data.desc,
+            price:data.price
         }
         console.log(serviceData)
-        const url =`https://localhost:4444/addService`;
+        const url =`http://localhost:4444/addService`;
         fetch(url,{
             method:'POST',
             headers:{
@@ -71,6 +74,10 @@ const AddService = () => {
                  <label htmlFor="">Service Title</label>
                   <br/>
                <input className="input" type="text" className="form-control" placeholder="Add new service" {...register('name')} />
+                     <br/>
+                 <label htmlFor="">Price</label>
+                  <br/>
+               <input className="input" type="text" className="form-control" placeholder="Add service charge" {...register('price')} />
                      <br/>
                <label htmlFor="">Description</label>
                  <br/>

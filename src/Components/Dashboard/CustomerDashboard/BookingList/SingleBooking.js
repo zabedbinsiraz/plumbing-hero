@@ -1,14 +1,14 @@
 import React from 'react';
-import image from '../../../../images/drainage.jpg';
 
-const SingleBooking = () => {
+
+const SingleBooking = (props) => {
+  const order =props.order;
     return (
-        <div className="card text-center col-md-3 col-sm-6" style={{ width: "18rem" }}>
-          <img style={{ height: '200px' }} src={image} className="card-img-top mt-3" alt="" />
+        <div style={{ height: '350px' }} className="card text-center col-md-3 col-sm-6 m-3 p-3" style={{ width: "18rem" }}>
+          <img style={{ height: '100px' }} src={order.productPhoto} className="card-img-top mt-3" alt="" />
           <div className="card-body">
-              <h3>Water Heater Services</h3>
-            <p className="card-text">Some quick example text to build on the card title and make up 
-            the bulk of the card's content.</p>
+              <h3>{order.productName}</h3>
+            <p className="card-text">{order.desc}</p>
           </div>
         </div>
     );

@@ -1,36 +1,47 @@
-import React from 'react';
-import serviceImg from '../../../../images/drainage.jpg';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Book from '../../../Dashboard/CustomerDashboard/Book/Book';
+import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 import Service from '../Service/Service';
-const services =[
-  {
-    title:'Water Heater Services',
-    Image:serviceImg
-  },
-  {
-    title:'Drainage Services',
-    Image:serviceImg
-  },
-  {
-    title:'Gas Line Services',
-    Image:serviceImg
-  },
-  {
-    title:'Bathroom Services',
-    Image:serviceImg
-  }
-]
 
-const Services = () => {
+
+const Services = (props) => {
+  const handleGetService = props.handleGetService;
+  const [services,setServices] = useState([]);
+
+  
+ 
+ 
+
+  useEffect(() =>{
+      fetch('http://localhost:4444/services')
+      .then(res=>res.json())
+      .then(data =>{
+        console.log(data)
+        setServices(data)
+      })
+  },[])
+
+
+  
+
+  
+
+
   return (
     <section>
-      <div className="text-center mt-5 mb-5 text-secondary">
-        <h2>Our Main Services</h2>
-      </div>
-      <div className="row d-flex justify-content-center d-grid gap-3"> 
-       {
-         services.map(service=> <Service service={service}></Service>)
-       }
-      </div>
+    <div>
+        <div className="text-center mt-5 mb-5 text-secondary">
+          <h2>Our Main Services</h2>
+          
+        </div>
+        <div className="row d-flex justify-content-center d-grid gap-3"> 
+         {
+           services.map(service=> <Service service={service} handleGetService={handleGetService}></Service>)
+         }
+        </div>
+        </div>
+      
     </section>
   );
 };
