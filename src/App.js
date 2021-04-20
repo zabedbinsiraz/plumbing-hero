@@ -30,9 +30,9 @@ const App = () => {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
             
             <Route path="/">
               <Home />

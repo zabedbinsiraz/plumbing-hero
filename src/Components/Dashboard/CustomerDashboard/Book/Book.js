@@ -20,10 +20,11 @@ const Book = (props) => {
             buyerEmail: orderDetails.email,
             paymentId: id,
             paymentMethod: type,
+            status:'On going',
             date: new Date(),
         }
 
-        fetch('http://localhost:4444/addOrder', {
+        fetch('https://infinite-hamlet-09689.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,10 +38,7 @@ const Book = (props) => {
         console.log(id)
     }
     return (
-        <div className="row m-2 p-2">
-            <div className="col-md-3">
-                <CustomerSidebar></CustomerSidebar>
-            </div>
+       
             <div style={{ width: '50%', backgroundColor: 'salmon', padding: '20px' }} className="col-md-7">
 
 
@@ -64,7 +62,7 @@ const Book = (props) => {
 
                 <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
             </div>
-        </div>
+       
     );
 };
 

@@ -21,7 +21,7 @@ const CustomerReview = () => {
         }
         console.log(reviewData)
 
-        const url =`http://localhost:4444/addReview`;
+        const url =`https://infinite-hamlet-09689.herokuapp.com/addReview`;
         fetch(url,{
             method:'POST',
             headers:{
@@ -39,11 +39,8 @@ const CustomerReview = () => {
     };
 
     return (
-        <div className="row m-2 p-2">
-        <div className="col-md-3">
-           <CustomerSidebar></CustomerSidebar>
-        </div>
-        <div style={{width:'50%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
+      
+        <div style={{width:'70%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
         <form  onSubmit={handleSubmit(onSubmit)}>
                <div className="form-control">
                <div>
@@ -74,7 +71,7 @@ const CustomerReview = () => {
               </div>
              </form> 
         </div>
-    </div>
+   
     );
 };
 

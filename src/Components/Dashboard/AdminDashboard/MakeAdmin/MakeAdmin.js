@@ -8,11 +8,13 @@ const MakeAdmin = () => {
     const onSubmit = data => {
        
         console.log(data.email)
-        const admin = data.email;
+        const admin = {
+            email:data.email
+        };
 
        
 
-        fetch('http://localhost:4444/addAdmin', {
+        fetch('https://infinite-hamlet-09689.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,31 +28,33 @@ const MakeAdmin = () => {
 
    
     return (
-        <div className="row m-2 p-2">
-        <div className="col-md-3">
-            <AdminSidebar></AdminSidebar>
-        </div>
-        <div style={{width:'50%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
+    //     <div className="row m-2 p-2">
+    //     <div className="col-md-3">
+    //         <AdminSidebar></AdminSidebar>
+    //     </div>
+       
+    // </div>
+
+    <div style={{width:'50%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
     
-        <form  onSubmit={handleSubmit(onSubmit)}>
-               <div className="form-control">
-               <div>
-                 <label htmlFor="">E-mail</label>
-                  <br/>
-               <input className="input" type="email" className="form-control" placeholder="valid email address" {...register('email')} />
-                    <br/>
-                 </div>
-                
-                 
-                
+    <form  onSubmit={handleSubmit(onSubmit)}>
+           <div className="form-control">
+           <div>
+             <label htmlFor="">E-mail</label>
+              <br/>
+           <input className="input" type="email" className="form-control" placeholder="valid email address" {...register('email')} />
+                <br/>
+             </div>
+            
              
-               </div>
-               <br/>
-              <div className="text-center">
-              <input className="save-btn btn btn-primary" type="submit" />
-              </div>
-             </form>
-        </div>
+            
+         
+           </div>
+           <br/>
+          <div className="text-center">
+          <input className="save-btn btn btn-primary" type="submit" />
+          </div>
+         </form>
     </div>
     );
 };

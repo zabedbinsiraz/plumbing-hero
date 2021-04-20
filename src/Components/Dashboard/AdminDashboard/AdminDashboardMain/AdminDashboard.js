@@ -4,6 +4,7 @@ import AddService from '../AddService/AddService';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageServices from '../ManageServices/ManageServices';
 import { Route, Switch } from 'react-router';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const AdminDashboard = () => {
     return (
@@ -11,6 +12,7 @@ const AdminDashboard = () => {
             
        
         <Switch>
+           
 
         <Route path="/dashboard/ordersList">
               <OrdersList></OrdersList>

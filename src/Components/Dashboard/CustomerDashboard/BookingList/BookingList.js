@@ -12,27 +12,24 @@ const BookingList = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:4444/allBookings?email='+loggedInUser.email)
+        fetch('https://infinite-hamlet-09689.herokuapp.com/allBookings?email='+loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
                 setLoading(false)
-                console.log(data,'data')
+                console.log(data)
             })
     }, []);
     
     return (
-        <div className="row m-2 p-2">
-        <div className="col-md-3">
-            <CustomerSidebar></CustomerSidebar>
-        </div>
+       
         <div style={{backgroundColor:'salmon',padding:'20px',height:'100%'}} className="col-md-7 d-flex flex-wrap justify-content-center">
 
            {
                orders.map(order =>  <SingleBooking order={order}></SingleBooking>)
            }
         </div>
-    </div>
+   
     );
 };
 

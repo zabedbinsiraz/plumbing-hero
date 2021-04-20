@@ -19,7 +19,7 @@ const AddService = () => {
             price:data.price
         }
         console.log(serviceData)
-        const url =`http://localhost:4444/addService`;
+        const url =`https://infinite-hamlet-09689.herokuapp.com/addService`;
         fetch(url,{
             method:'POST',
             headers:{
@@ -57,10 +57,7 @@ const AddService = () => {
 
 
     return (
-        <div className="row m-2 p-2">
-        <div className="col-md-3">
-            <AdminSidebar></AdminSidebar>
-        </div>
+       
         <div style={{width:'50%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
     
              
@@ -104,7 +101,7 @@ const AddService = () => {
 
 
         </div>
-    </div>
+   
     );
 };
 

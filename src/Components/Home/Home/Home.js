@@ -20,7 +20,7 @@ const Home = () => {
 
         setGetService(true);
 
-        fetch(`http://localhost:4444/service/${id}`)
+        fetch(`https://infinite-hamlet-09689.herokuapp.com/service/${id}`)
             .then(res => res.json())
             .then(item => {
                 setSingleItem(item)

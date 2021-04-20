@@ -10,7 +10,7 @@ const OrdersList = () => {
  
 
     useEffect(() =>{
-        fetch('http://localhost:4444/orders')
+        fetch('https://infinite-hamlet-09689.herokuapp.com/orders')
         .then(res=>res.json())
         .then(data =>{
           console.log(data)
@@ -20,10 +20,7 @@ const OrdersList = () => {
 
 
     return (
-        <div className="row m-2 p-2">
-        <div className="col-md-2">
-            <AdminSidebar></AdminSidebar>
-        </div>
+       
         <div style={{backgroundColor:'salmon',padding:'20px'}} className="col-md-9">
     
     
@@ -55,7 +52,7 @@ const OrdersList = () => {
                     </tbody>
                 </table>
         </div>
-    </div>
+    
     );
 };
 

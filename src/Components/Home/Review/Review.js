@@ -8,7 +8,7 @@ const Review = () => {
     
 
     useEffect(() =>{
-        fetch('http://localhost:4444/allReviews')
+        fetch('https://infinite-hamlet-09689.herokuapp.com/allReviews')
         .then(res=>res.json())
         .then(data =>{
           console.log(data)

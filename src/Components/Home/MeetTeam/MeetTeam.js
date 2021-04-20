@@ -1,4 +1,8 @@
 import React from 'react';
+import pic1 from '../../../images/md.jpg';
+import pic2 from '../../../images/manager.jpg';
+import pic3 from '../../../images/engineer.jpg';
+import pic4 from '../../../images/md.jpg';
 
 const MeetTeam = () => {
     return (
@@ -8,7 +12,7 @@ const MeetTeam = () => {
 
           </div>
           <div className="card text-center col-md-3 col-sm-6" style={{ width: "18rem" }}>
-          <img style={{ height: '200px' }} src="" className="card-img-top mt-3" alt="" />
+          <img style={{ height: '200px' }} src={pic1} className="card-img-top mt-3" alt="" />
           <div className="card-body">
               <h3>Daniel Darker</h3>
               <h6>Engineer</h6>
@@ -19,7 +23,7 @@ const MeetTeam = () => {
           </div>
         </div>
           <div className="card text-center col-md-3 col-sm-6" style={{ width: "18rem" }}>
-          <img style={{ height: '200px' }} src="" className="card-img-top mt-3" alt="" />
+          <img style={{ height: '200px' }} src={pic2}  className="card-img-top mt-3" alt="" />
           <div className="card-body">
               <h3>Michel Worker</h3>
               <h6>Manager</h6>
@@ -30,7 +34,7 @@ const MeetTeam = () => {
           </div>
         </div>
           <div className="card text-center col-md-3 col-sm-6" style={{ width: "18rem" }}>
-          <img style={{ height: '200px' }} src="" className="card-img-top mt-3" alt="" />
+          <img style={{ height: '200px' }} src={pic3}  className="card-img-top mt-3" alt="" />
           <div className="card-body">
               <h3>Cliptoras Das</h3>
               <h6>Engineer</h6>
@@ -41,7 +45,7 @@ const MeetTeam = () => {
           </div>
         </div>
           <div className="card text-center col-md-3 col-sm-6" style={{ width: "18rem" }}>
-          <img style={{ height: '200px' }} src="" className="card-img-top mt-3" alt="" />
+          <img style={{ height: '200px' }} src={pic4}  className="card-img-top mt-3" alt="" />
           <div className="card-body">
               <h3>WoWer Crush</h3>
               <h6>Assistant Manager</h6>
