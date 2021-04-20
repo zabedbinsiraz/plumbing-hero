@@ -26,7 +26,7 @@ const Dashboard = () => {
 
             {
                 admin.email ? <div className='row'>
-                    <div className='col-md-3' style={{width:'100%',backgroundColor:'tomato',padding:'10px'}}>
+                    <div className='col-md-3' >
                         <AdminSidebar></AdminSidebar>
                     </div>
                     <div className='col-md-8'>

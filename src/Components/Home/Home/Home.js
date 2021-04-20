@@ -32,7 +32,7 @@ const Home = () => {
     }
     return (
 
-        <section>
+        <section style={{backgroundColor:'lightblue'}}>
             {
                 getService ? <PrivateRoute>
                     <Book singleItem={singleItem}></Book>
