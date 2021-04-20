@@ -8,21 +8,23 @@ const MakeAdmin = () => {
     const onSubmit = data => {
        
         console.log(data.email)
+        const admin = data.email;
 
-        const url =`https://localhost:4444/addService`;
-        fetch(url,{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify(data.email)
-        })
-        .then(res=>{
-            console.log(res)
-        })
        
+
+        fetch('http://localhost:4444/addAdmin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(admin)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
         
     };
+
+   
     return (
         <div className="row m-2 p-2">
         <div className="col-md-3">

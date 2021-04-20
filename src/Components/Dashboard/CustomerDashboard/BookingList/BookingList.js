@@ -9,9 +9,10 @@ const BookingList = () => {
     const [orders,setOrders] = useState([]);
     const [loading,setLoading] = useState(true);
     
+    
 
     useEffect(() => {
-        fetch('http://localhost:4444/allOrders?email='+loggedInUser.email)
+        fetch('http://localhost:4444/allBookings?email='+loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
