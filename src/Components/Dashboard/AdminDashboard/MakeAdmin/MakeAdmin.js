@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
-
+    const [addedAdmin,setAddedAdmin] = useState(false);
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
        
@@ -23,6 +23,7 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
+            setAddedAdmin(true)
         
     };
 
@@ -35,26 +36,29 @@ const MakeAdmin = () => {
        
     // </div>
 
-    <div style={{width:'50%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
-    
-    <form  onSubmit={handleSubmit(onSubmit)}>
-           <div className="form-control">
-           <div>
-             <label htmlFor="">E-mail</label>
-              <br/>
-           <input className="input" type="email" className="form-control" placeholder="valid email address" {...register('email')} />
-                <br/>
-             </div>
-            
-             
-            
-         
-           </div>
+    <div style={{width:'60%',backgroundColor:'salmon',padding:'30px',marginTop:'30px'}} >
+    <h3 className="text-dark">Make Admin</h3>
+    {
+        addedAdmin? <h3>Added Admin Successfully</h3>
+        : <form  onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-control">
+        <div>
+          <label htmlFor="">E-mail</label>
            <br/>
-          <div className="text-center">
-          <input className="save-btn btn btn-primary" type="submit" />
+        <input className="input" type="email" className="form-control" placeholder="valid email address" {...register('email')} />
+             <br/>
           </div>
-         </form>
+         
+          
+         
+      
+        </div>
+        <br/>
+       <div className="text-center">
+       <input className="save-btn btn btn-primary" type="submit" />
+       </div>
+      </form>
+    }
     </div>
     );
 };

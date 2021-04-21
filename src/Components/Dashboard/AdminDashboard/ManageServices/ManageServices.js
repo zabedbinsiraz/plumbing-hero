@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 
 const ManageServices = () => {
 
-    const [services,setServices] = useState([]);
-    
+    const [services, setServices] = useState([]);
 
-    
+
+
 
     const loadProducts = () => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/services')
-        .then(res=>res.json())
-        .then(data =>{
-          setServices(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                setServices(data)
+            })
     }
     loadProducts();
     const handleDelete = (id) => {
@@ -34,14 +34,14 @@ const ManageServices = () => {
         //     <div className="col-md-3">
         //         <AdminSidebar></AdminSidebar>
         //     </div>
-           
+
         // </div>
-        <div style={{ width: '50%', backgroundColor: 'salmon', padding: '20px' }} className="col-md-7">
+        <div style={{ backgroundColor: 'salmon', padding: '20px', marginTop: '30px' }}>
 
-                
+            <h3 className="text-dark">Manage Services</h3>
 
-        <table className="table table-success table-striped">
-            
+            <table className="table table-success table-striped">
+
                 <thead>
                     <tr>
                         <th scope="col">SL.</th>
@@ -51,21 +51,21 @@ const ManageServices = () => {
                     </tr>
                 </thead>
                 <tbody>
-                  {
-                      services.map(service => 
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>{service.productName}</td>
-                        <td>{service.price}</td>
-                        <td><button onClick={() => handleDelete(service._id)} className="btn btn-primary">delete</button></td>
-                    </tr>)
-                  }
-                  
+                    {
+                        services.map(service =>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{service.productName}</td>
+                                <td>{service.price}</td>
+                                <td><button onClick={() => handleDelete(service._id)} className="btn btn-primary">delete</button></td>
+                            </tr>)
+                    }
+
                 </tbody>
             </table>
-       
 
-    </div>
+
+        </div>
     );
 };
 

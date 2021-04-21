@@ -41,6 +41,8 @@ const SimpleCardForm = ({ handlePayment }) => {
     <div>
       <div >
         <form onSubmit={handleSubmit}>
+
+          <div className="p-2 bg-light ">
           <CardElement options={{
             style: {
               base: {
@@ -55,14 +57,16 @@ const SimpleCardForm = ({ handlePayment }) => {
               },
             },
           }} />
-          <button className="btn btn-secondary" type="submit" disabled={!stripe}>
-            Pay
+          </div>
+        
+          <div className="p-3 text-center">
+          <button className="btn btn-primary text-white p-3" type="submit" disabled={!stripe}>
+           Submit Order
             </button>
+          </div>
         </form>
       </div>
-      {/* <div>
-            <SplitCardForm></SplitCardForm>
-        </div> */}
+      
       {
         paymentError && <p style={{ color: 'red' }}>{paymentError}</p>
       }

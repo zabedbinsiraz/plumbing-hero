@@ -8,7 +8,9 @@ import CustomerSidebar from '../CustomerDashboard/CustomerSidebar/CustomerSideba
 
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [admin, setAdmin] = useState([]);
+    const [admin, setAdmin] = useState({
+        email:''
+    });
     const [loading, setLoading] = useState(false);
 
 
@@ -16,16 +18,17 @@ const Dashboard = () => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/allAdmin?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
-                setAdmin(data[0])
+                const mail={email:data[0]}
+                setAdmin(mail)
                 setLoading(false)
                 console.log(data[0], 'data')
             })
     }, []);
     return (
-        <div >
+        <div  style={{backgroundColor:'teal'}}>
 
             {
-                admin.email ? <div className='row'>
+                admin.email ? <div className='row '>
                     <div className='col-md-3' >
                         <AdminSidebar></AdminSidebar>
                     </div>
@@ -33,11 +36,12 @@ const Dashboard = () => {
                         <AdminDashboard></AdminDashboard>
                     </div>
                 </div>
-                    : <div className="row m-2 p-2">
+                    : <div className="row m-2 p-2 ">
                         <div className="col-md-3">
                             <CustomerSidebar></CustomerSidebar>
                         </div>
                         <div className="col-md-8">
+
                             <CustomerDashboard></CustomerDashboard>
 
                         </div>

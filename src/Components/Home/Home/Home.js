@@ -33,6 +33,7 @@ const Home = () => {
     return (
 
         <section style={{backgroundColor:'lightblue'}}>
+            
             {
                 getService ? <PrivateRoute>
                     <Book singleItem={singleItem}></Book>

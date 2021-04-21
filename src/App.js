@@ -10,6 +10,7 @@ import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import CustomerDashboard from './Components/Dashboard/CustomerDashboard/CustomerDashboard/CustomerDashboard';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
+import Services from './Components/Home/ServiceSection/Services/Services';
 
 export const UserContext = createContext();
 
@@ -22,13 +23,16 @@ const App = () => {
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
 
     <Router>
-        <div>
+     
           <Switch>
             <Route path="/home">
               <Home />
             </Route>
             <Route path="/login">
               <Login />
+              <Route path="/services">
+                <Services></Services>
+              </Route>
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
@@ -38,7 +42,7 @@ const App = () => {
               <Home />
             </Route>
           </Switch>
-        </div>
+       
       </Router>
     
       </UserContext.Provider>

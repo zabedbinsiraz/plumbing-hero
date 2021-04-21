@@ -17,15 +17,15 @@ const Review = () => {
     },[])
     
     return (
-       <section className="row m-5 p-3">
+       <section className="row m-5 p-3 ">
 
            <div className="text-center mt-5 mb-5">
 
-              <h2>Our CustomerWords</h2>
+              <h2>Our Customer Words</h2>
 
           </div>
 
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap bg-light">
 
 
               {

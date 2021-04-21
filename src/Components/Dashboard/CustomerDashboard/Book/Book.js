@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../../App';
+import Navbar from '../../../Home/HeaderSection/Navbar/Navbar';
 import ProcessPayment from '../../../PaymentProcess/ProcessPayment';
 import CustomerSidebar from '../CustomerSidebar/CustomerSidebar';
 
@@ -39,29 +40,40 @@ const Book = (props) => {
     }
     return (
        
-            <div style={{ width: '50%', backgroundColor: 'salmon', padding: '20px' }} className="col-md-7">
+           <div>
+               <Navbar></Navbar>
 
+               <div style={{ width: '50%', backgroundColor: 'tomato', padding: '100px', margin:'20px 350px' }}>
 
-                <form>
-                    <div className="mb-3">
+               <h3 className="text-dark">Order Service</h3>
+              
 
-                        <input defaultValue={loggedInUser.buyer} type="text" className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                    </div>
-                    <div className="mb-3">
+{
+    placeOrder? <h2>Order submitted Successfully</h2>
+    : <div> 
+        <form>
+    <div className="mb-3">
 
-                        <input defaultValue={loggedInUser.email} type="text" className="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                    </div>
-                    <div className="mb-3">
+        <input defaultValue={loggedInUser.buyer} type="text" className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    </div>
+    <div className="mb-3">
 
-                        <input defaultValue={singleService.productName} type="text" className="form-control" name="productName" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                    </div>
+        <input defaultValue={loggedInUser.email} type="text" className="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    </div>
+    <div className="mb-3">
 
-                    {/* <button type="submit" className="btn btn-primary">Submit</button> */}
-                </form>
+        <input defaultValue={singleService.productName} type="text" className="form-control" name="productName" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    </div>
 
+    {/* <button type="submit" className="btn btn-primary">Submit</button> */}
+</form>
 
-                <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
-            </div>
+<small>You have to pay ${singleService.price}</small>
+<ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
+</div>
+}
+</div>
+           </div>
        
     );
 };

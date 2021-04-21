@@ -21,8 +21,8 @@ const OrdersList = () => {
 
     return (
        
-        <div style={{backgroundColor:'salmon',padding:'20px'}} className="col-md-9">
-    
+        <div style={{backgroundColor:'salmon',padding:'30px',marginTop:'30px'}}>
+         <h3 className="text-dark">Order List</h3>
     
         <table className="table table-success table-striped">
                     

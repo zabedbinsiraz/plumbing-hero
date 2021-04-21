@@ -58,13 +58,13 @@ const AddService = () => {
 
     return (
        
-        <div style={{width:'50%',backgroundColor:'salmon',padding:'20px'}} className="col-md-7">
+        <div style={{width:'80%',backgroundColor:'salmon',padding:'30px',marginTop:'30px'}} >
     
              
         <div className="form-container">
-            <h3>Add Service</h3>
+            <h3 className="text-dark">Add Service</h3>
            {
-               addedService? <h3>New Service added Successfully</h3>
+               addedService? <h3 className="text-white"> New Service added Successfully</h3>
                : <form  onSubmit={handleSubmit(onSubmit)}>
                <div className="form-control">
                <div>
