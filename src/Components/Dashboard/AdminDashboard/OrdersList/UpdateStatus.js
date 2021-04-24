@@ -21,6 +21,18 @@ const UpdateStatus = (props) => {
       
         console.log(updateData)
 
+        fetch(`http://localhost:4444/updateOrder/${updateData._id}`,{
+            method:'PATCH',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(updateData)
+        })
+        .then(res=>res.json())
+        .then(result =>{
+          if(result){
+              console.log('updated successfully') 
+          }
+        })
+
        
         
     };
@@ -40,8 +52,8 @@ const UpdateStatus = (props) => {
                  <br/>
            <label htmlFor="">Order Status</label>
              <br/>
-           <input className="input" type="text" className="form-control"  {...register('status')} />
-           <Select options={options}/>
+           <input className="input" type="text" className="form-control"  {...register('status')}/>
+           <Select options={options}    />
   
             <br/>
            
