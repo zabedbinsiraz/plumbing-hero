@@ -54,7 +54,7 @@ const ManageServices = () => {
                     {
                         services.map(service =>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{1}</th>
                                 <td>{service.productName}</td>
                                 <td>{service.price}</td>
                                 <td><button onClick={() => handleDelete(service._id)} className="btn btn-primary">delete</button></td>

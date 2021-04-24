@@ -23,12 +23,15 @@ const BookingList = () => {
     
     return (
        
-        <div style={{backgroundColor:'salmon',padding:'20px',height:'100%'}} className="d-flex flex-wrap justify-content-center">
-               <h3 className="text-dark">Processing Order</h3>
-           {
-               orders.map(order =>  <SingleBooking order={order}></SingleBooking>)
-           }
-        </div>
+     <div>
+         <h3 className="text-dark">Your Ordered List</h3>
+            <div style={{backgroundColor:'salmon',padding:'20px',height:'100%'}} className="d-flex flex-wrap justify-content-center">
+               
+               {
+                   orders.map(order =>  <SingleBooking order={order}></SingleBooking>)
+               }
+            </div>
+     </div>
    
     );
 };
