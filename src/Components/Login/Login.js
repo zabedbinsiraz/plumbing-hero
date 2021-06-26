@@ -25,7 +25,7 @@ const Login = () => {
 
     const history = useHistory();
     const location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/" } } ;
 
 
 
@@ -39,8 +39,8 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                var user = result.user;
-                const { displayName, email, photoURL } = user;
+                var userDetail = result.user;
+                const { displayName, email, photoURL } = userDetail;
                 const signedInUser = {
                     isSignedIn: true,
                     buyer: displayName,
@@ -52,6 +52,8 @@ const Login = () => {
                 setLoggedInUser(signedInUser);
                 history.replace(from);
                 setUserToken();
+                console.log(user.isSignedIn);
+                console.log(loggedInUser.email);
 
 
             }).catch((error) => {
@@ -76,7 +78,7 @@ const Login = () => {
             <div className="row text-center">
                 <div className="mb-5 ms-4">
                     {
-                        loggedInUser.email ? <h2>{loggedInUser.name}</h2>
+                        loggedInUser.email ? <h2 className="text-primary">{loggedInUser.buyer}</h2>
                             : <h2>Login</h2>
                     }
                 </div>
@@ -91,9 +93,9 @@ const Login = () => {
 
                 <div
                     className=" text-center">
-                    <button onClick={() => { handleGoogleSignIn() }} className="btn-primary btn ms-5 mt-5" style={{ height: '70px', width: '400px', fontSize: '36px' }}>
+                    <button onClick={() => { handleGoogleSignIn() }} className="btn-primary btn ms-5 mt-5" style={{ height: '70px', minWidth: '300px', fontSize: '36px' }}>
                         {
-                            user.isSignedIn ? 'You Logged In Successfully' : 'Continue With Google'
+                            loggedInUser.email ? 'You Logged In Successfully' : 'Continue With Google'
                         }
                     </button>
                 </div>

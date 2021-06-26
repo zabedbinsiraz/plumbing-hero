@@ -23,7 +23,7 @@ const Dashboard = () => {
                 setLoading(false)
                 console.log(data[0], 'data')
             })
-    }, []);
+    }, [loggedInUser.email]);
     return (
         <div style={{ backgroundColor: 'teal' }}>
 
