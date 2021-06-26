@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import Book from '../../Dashboard/CustomerDashboard/Book/Book';
 import Footer from '../FooterSection/Footer/Footer';
 import Header from '../HeaderSection/Header/Header';
@@ -32,8 +32,8 @@ const Home = () => {
     }
     return (
 
-        <section style={{backgroundColor:'lightblue'}}>
-            
+        <section style={{ backgroundColor: 'lightblue' }}>
+
             {
                 getService ? <PrivateRoute>
                     <Book singleItem={singleItem}></Book>

@@ -3,16 +3,16 @@ import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
-    const [addedAdmin,setAddedAdmin] = useState(false);
+    const [addedAdmin, setAddedAdmin] = useState(false);
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
-       
+
         console.log(data.email)
         const admin = {
-            email:data.email
+            email: data.email
         };
 
-       
+
 
         fetch('https://infinite-hamlet-09689.herokuapp.com/addAdmin', {
             method: 'POST',
@@ -23,43 +23,37 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-            setAddedAdmin(true)
-        
+        setAddedAdmin(true)
+
     };
 
-   
-    return (
-    //     <div className="row m-2 p-2">
-    //     <div className="col-md-3">
-    //         <AdminSidebar></AdminSidebar>
-    //     </div>
-       
-    // </div>
 
-    <div style={{width:'60%',backgroundColor:'salmon',padding:'30px',marginTop:'30px'}} >
-    <h3 className="text-dark">Make Admin</h3>
-    {
-        addedAdmin? <h3>Added Admin Successfully</h3>
-        : <form  onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-control">
-        <div>
-          <label htmlFor="">E-mail</label>
-           <br/>
-        <input className="input" type="email" className="form-control" placeholder="valid email address" {...register('email')} />
-             <br/>
-          </div>
-         
-          
-         
+    return (
       
+        <div style={{ width: '60%', backgroundColor: 'salmon', padding: '30px', marginTop: '30px' }} >
+            <h3 className="text-dark">Make Admin</h3>
+            {
+                addedAdmin ? <h3>Added Admin Successfully</h3>
+                    : <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="form-control">
+                            <div>
+                                <label htmlFor="">E-mail</label>
+                                <br />
+                                <input className="input" type="email" className="form-control" placeholder="valid email address" {...register('email')} />
+                                <br />
+                            </div>
+
+
+
+
+                        </div>
+                        <br />
+                        <div className="text-center">
+                            <input className="save-btn btn btn-primary" type="submit" />
+                        </div>
+                    </form>
+            }
         </div>
-        <br/>
-       <div className="text-center">
-       <input className="save-btn btn btn-primary" type="submit" />
-       </div>
-      </form>
-    }
-    </div>
     );
 };
 

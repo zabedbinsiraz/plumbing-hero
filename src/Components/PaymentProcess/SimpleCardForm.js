@@ -43,30 +43,30 @@ const SimpleCardForm = ({ handlePayment }) => {
         <form onSubmit={handleSubmit}>
 
           <div className="p-2 bg-light ">
-          <CardElement options={{
-            style: {
-              base: {
-                fontSize: '16px',
-                color: '#424770',
-                '::placeholder': {
-                  color: '#aab7c4',
+            <CardElement options={{
+              style: {
+                base: {
+                  fontSize: '16px',
+                  color: '#424770',
+                  '::placeholder': {
+                    color: '#aab7c4',
+                  },
+                },
+                invalid: {
+                  color: '#9e2146',
                 },
               },
-              invalid: {
-                color: '#9e2146',
-              },
-            },
-          }} />
+            }} />
           </div>
-        
+
           <div className="p-3 text-center">
-          <button className="btn btn-primary text-white p-3" type="submit" disabled={!stripe}>
-           Submit Order
+            <button className="btn btn-primary text-white p-3" type="submit" disabled={!stripe}>
+              Submit Order
             </button>
           </div>
         </form>
       </div>
-      
+
       {
         paymentError && <p style={{ color: 'red' }}>{paymentError}</p>
       }

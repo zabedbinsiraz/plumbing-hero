@@ -8,21 +8,21 @@ import CustomerReview from '../CustomerReview/CustomerReview'
 const CustomerDashboard = () => {
     return (
         <div>
-          
 
-          <Switch>
-             
 
-          <Route path="/dashboard/bookingList">
-                <BookingList></BookingList>
-            </Route>
-            <Route path="/dashboard/customerReview">
-                <CustomerReview></CustomerReview>
-            </Route>
-            
-           
+            <Switch>
 
-          </Switch>
+
+                <Route path="/dashboard/bookingList">
+                    <BookingList></BookingList>
+                </Route>
+                <Route path="/dashboard/customerReview">
+                    <CustomerReview></CustomerReview>
+                </Route>
+
+
+
+            </Switch>
         </div>
     );
 };

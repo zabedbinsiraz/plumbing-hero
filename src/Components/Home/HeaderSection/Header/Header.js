@@ -1,15 +1,14 @@
 import React from 'react';
 import HeaderMain from '../HeaderMain/HeaderMain';
-import Navbar from '../Navbar/Navbar';
 
 const Header = () => {
-    return (
-      <header>
-          <Navbar></Navbar>
-          <HeaderMain></HeaderMain>
+  return (
+    <header>
+     
+      <HeaderMain></HeaderMain>
 
-      </header>
-    );
+    </header>
+  );
 };
 
 export default Header;

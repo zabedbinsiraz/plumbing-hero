@@ -7,45 +7,54 @@ import {
   Route
 } from "react-router-dom";
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
-import CustomerDashboard from './Components/Dashboard/CustomerDashboard/CustomerDashboard/CustomerDashboard';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
 import Services from './Components/Home/ServiceSection/Services/Services';
+import Projects from './Components/Home/Projects/Projects/Projects';
+import Footer from './Components/Home/FooterSection/Footer/Footer';
+import Navbar from './Components/Home/HeaderSection/Navbar/Navbar';
 
 export const UserContext = createContext();
 
 const App = () => {
 
-  const [loggedInUser,setLoggedInUser] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState({});
 
 
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
 
-    <Router>
-     
-          <Switch>
-            <Route path="/home">
-              <Home />
+      <Router>
+      <Navbar></Navbar>
+        <Switch>
+          
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/services">
+              <Services></Services>
             </Route>
-            <Route path="/login">
-              <Login />
-              <Route path="/services">
-                <Services></Services>
-              </Route>
+            <Route path="/projects">
+              <Projects></Projects>
             </Route>
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-            
-            <Route path="/">
-              <Home />
+            <Route path="/contact">
+              <Footer></Footer>
             </Route>
-          </Switch>
-       
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+
       </Router>
-    
-      </UserContext.Provider>
+
+    </UserContext.Provider>
 
   );
 };

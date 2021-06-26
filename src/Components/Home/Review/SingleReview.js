@@ -5,7 +5,7 @@ import React from "react";
 
 const SingleReview = (props) => {
 
- 
+
 
     const review = props.review;
     return (
@@ -16,18 +16,18 @@ const SingleReview = (props) => {
             <div className="me-5">
                 <div >
 
-                    
-                      <ReactStars
-                       
+
+                    <ReactStars
+
                         count={review.ratings}
                         size={24}
                         color="#ffd700"
                     />,
 
- 
 
 
-                      </div>
+
+                </div>
                 <h4>{review.name}</h4>
                 <h6>{review.rank}</h6>
                 <p>{review.desc}</p>

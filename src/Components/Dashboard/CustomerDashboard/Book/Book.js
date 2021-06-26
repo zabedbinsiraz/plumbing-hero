@@ -21,7 +21,7 @@ const Book = (props) => {
             buyerEmail: orderDetails.email,
             paymentId: id,
             paymentMethod: type,
-            status:'On going',
+            status: 'On going',
             date: new Date(),
         }
 
@@ -39,42 +39,42 @@ const Book = (props) => {
         console.log(id)
     }
     return (
-       
-           <div>
-               <Navbar></Navbar>
 
-               <div style={{ width: '50%', backgroundColor: 'tomato', padding: '100px', margin:'20px 350px' }}>
+        <div>
+            <Navbar></Navbar>
 
-               <h3 className="text-dark">Order Service</h3>
-              
+            <div style={{ width: '50%', backgroundColor: 'tomato', padding: '100px', margin: '20px 350px' }}>
 
-{
-    placeOrder? <h2>Order submitted Successfully</h2>
-    : <div> 
-        <form>
-    <div className="mb-3">
+                <h3 className="text-dark">Order Service</h3>
 
-        <input defaultValue={loggedInUser.buyer} type="text" className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" />
-    </div>
-    <div className="mb-3">
 
-        <input defaultValue={loggedInUser.email} type="text" className="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" />
-    </div>
-    <div className="mb-3">
+                {
+                    placeOrder ? <h2>Order submitted Successfully</h2>
+                        : <div>
+                            <form>
+                                <div className="mb-3">
 
-        <input defaultValue={singleService.productName} type="text" className="form-control" name="productName" id="exampleInputEmail1" aria-describedby="emailHelp" />
-    </div>
+                                    <input defaultValue={loggedInUser.buyer} type="text" className="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                </div>
+                                <div className="mb-3">
 
-    {/* <button type="submit" className="btn btn-primary">Submit</button> */}
-</form>
+                                    <input defaultValue={loggedInUser.email} type="text" className="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                </div>
+                                <div className="mb-3">
 
-<small>You have to pay ${singleService.price}</small>
-<ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
-</div>
-}
-</div>
-           </div>
-       
+                                    <input defaultValue={singleService.productName} type="text" className="form-control" name="productName" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                </div>
+
+                                {/* <button type="submit" className="btn btn-primary">Submit</button> */}
+                            </form>
+
+                            <small>You have to pay ${singleService.price}</small>
+                            <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
+                        </div>
+                }
+            </div>
+        </div>
+
     );
 };
 

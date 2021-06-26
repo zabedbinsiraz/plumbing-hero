@@ -5,17 +5,14 @@ const ManageServices = () => {
 
     const [services, setServices] = useState([]);
 
-
-
-
-    const loadProducts = () => {
+    const loadServices= () => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
             })
     }
-    loadProducts();
+    loadServices();
     const handleDelete = (id) => {
         fetch(`https://infinite-hamlet-09689.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE'
@@ -23,19 +20,14 @@ const ManageServices = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    loadProducts();
+                    loadServices();
                 }
             })
 
     }
 
     return (
-        // <div className="row m-2 p-2">
-        //     <div className="col-md-3">
-        //         <AdminSidebar></AdminSidebar>
-        //     </div>
 
-        // </div>
         <div style={{ backgroundColor: 'salmon', padding: '20px', marginTop: '30px' }}>
 
             <h3 className="text-dark">Manage Services</h3>

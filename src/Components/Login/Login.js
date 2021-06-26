@@ -9,7 +9,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 
 const Login = () => {
-  
+
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [user, setUser] = useState({
@@ -66,11 +66,12 @@ const Login = () => {
             sessionStorage.setItem('token', idToken);
         }).catch(function (error) {
             // Handle error
+            console.log(error);
         });
     }
 
     return (
-        <div className="container d-flex justify-content-center m-5 p-5">
+        <div className="container d-flex justify-content-center m-3 p-3">
 
             <div className="row text-center">
                 <div className="mb-5 ms-4">

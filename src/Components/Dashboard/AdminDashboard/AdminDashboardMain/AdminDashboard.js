@@ -9,26 +9,26 @@ import AdminSidebar from '../AdminSidebar/AdminSidebar';
 const AdminDashboard = () => {
     return (
         <div>
-            
-       
-        <Switch>
-           
 
-        <Route path="/dashboard/ordersList">
-              <OrdersList></OrdersList>
-          </Route>
-          <Route path="/dashboard/addService">
-             <AddService></AddService>
-          </Route>
-          <Route path="/dashboard/makeAdmin">
-              <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path="/dashboard/manageServices">
-              <ManageServices></ManageServices>
-          </Route>
 
-        </Switch>
-      </div>
+            <Switch>
+
+
+                <Route path="/dashboard/ordersList">
+                    <OrdersList></OrdersList>
+                </Route>
+                <Route path="/dashboard/addService">
+                    <AddService></AddService>
+                </Route>
+                <Route path="/dashboard/makeAdmin">
+                    <MakeAdmin></MakeAdmin>
+                </Route>
+                <Route path="/dashboard/manageServices">
+                    <ManageServices></ManageServices>
+                </Route>
+
+            </Switch>
+        </div>
     );
 };
 

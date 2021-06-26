@@ -7,41 +7,41 @@ import Service from '../Service/Service';
 
 const Services = (props) => {
   const handleGetService = props.handleGetService;
-  const [services,setServices] = useState([]);
+  const [services, setServices] = useState([]);
 
-  
- 
- 
 
-  useEffect(() =>{
-      fetch('https://infinite-hamlet-09689.herokuapp.com/services')
-      .then(res=>res.json())
-      .then(data =>{
+
+
+
+  useEffect(() => {
+    fetch('https://infinite-hamlet-09689.herokuapp.com/services')
+      .then(res => res.json())
+      .then(data => {
         console.log(data)
         setServices(data)
       })
-  },[])
+  }, [])
 
 
-  
 
-  
+
+
 
 
   return (
     <section>
-    <div>
+      <div>
         <div className="text-center mt-5 mb-5 text-secondary">
           <h2>Our Main Services</h2>
-          
+
         </div>
-        <div className="row d-flex justify-content-center d-grid gap-3"> 
-         {
-           services.map(service=> <Service service={service} handleGetService={handleGetService}></Service>)
-         }
+        <div className="row d-flex justify-content-center d-grid gap-3">
+          {
+            services.map(service => <Service service={service} handleGetService={handleGetService}></Service>)
+          }
         </div>
-        </div>
-      
+      </div>
+
     </section>
   );
 };

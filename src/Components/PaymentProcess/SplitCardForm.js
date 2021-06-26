@@ -74,7 +74,7 @@ const SplitCardForm = () => {
           }}
         />
       </label>
-      <br/>
+      <br />
       <label>
         Expiration date
         <CardExpiryElement
@@ -93,7 +93,7 @@ const SplitCardForm = () => {
           }}
         />
       </label>
-      <br/>
+      <br />
       <label>
         CVC
         <CardCvcElement
@@ -112,7 +112,7 @@ const SplitCardForm = () => {
           }}
         />
       </label>
-      <br/>
+      <br />
       <button type="submit" disabled={!stripe}>
         Pay
       </button>

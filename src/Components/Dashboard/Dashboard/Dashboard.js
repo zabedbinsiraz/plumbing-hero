@@ -9,7 +9,7 @@ import CustomerSidebar from '../CustomerDashboard/CustomerSidebar/CustomerSideba
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [admin, setAdmin] = useState({
-        email:''
+        email: ''
     });
     const [loading, setLoading] = useState(false);
 
@@ -18,14 +18,14 @@ const Dashboard = () => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/allAdmin?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
-                const mail={email:data[0]}
+                const mail = { email: data[0] }
                 setAdmin(mail)
                 setLoading(false)
                 console.log(data[0], 'data')
             })
     }, []);
     return (
-        <div  style={{backgroundColor:'teal'}}>
+        <div style={{ backgroundColor: 'teal' }}>
 
             {
                 admin.email ? <div className='row '>
