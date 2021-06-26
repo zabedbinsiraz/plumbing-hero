@@ -1,5 +1,6 @@
 import React from 'react';
 import './HeaderMain.css';
+import Typist from 'react-typist';
 
 const HeaderMain = () => {
     return (
@@ -7,10 +8,19 @@ const HeaderMain = () => {
         justify-content-center header-container text-primary">
 
 
-            <div>
+            {/* <div>
                 <h5>Plumbing-Hero Provides</h5>
                 <h1>Best Plumbing Services</h1>
-            </div>
+            </div> */}
+
+<Typist>
+  <h5 className="my-custom-class h-5"> Plumbing-Hero Provides </h5>
+  <Typist.Delay ms={500} />
+  <br />
+  <div className="container">
+  <h1 className="h-1">Best Plumbing Services</h1>
+ </div>
+</Typist>
 
 
         </div>
