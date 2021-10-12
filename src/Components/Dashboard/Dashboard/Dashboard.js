@@ -25,7 +25,7 @@ const Dashboard = () => {
             })
     }, [loggedInUser.email]);
     return (
-        <div style={{ backgroundColor: 'teal' }}>
+        <div style={{ backgroundColor: 'transparent' }}>
 
             {
                 admin.email ? <div className='row '>

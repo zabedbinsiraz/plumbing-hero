@@ -41,7 +41,6 @@ const Book = (props) => {
     return (
 
         <div>
-            <Navbar></Navbar>
 
             <div style={{ width: '50%', backgroundColor: 'tomato', padding: '100px', margin: '20px 350px' }}>
 
