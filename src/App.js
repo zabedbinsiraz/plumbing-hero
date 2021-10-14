@@ -1,80 +1,54 @@
-import React from 'react';
-import Home from './Components/Home/Home/Home';
-import Login from './Components/Login/Login';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
-import { createContext, useState } from 'react';
-import PrivateRoute from './Components/Home/PrivateRoute/PrivateRoute';
-import Services from './Components/Home/ServiceSection/Services/Services';
-import Projects from './Components/Home/Projects/Projects/Projects';
-import Footer from './Components/Home/FooterSection/Footer/Footer';
-import Navbar from './Components/Home/HeaderSection/Navbar/Navbar';
+import "./App.css";
+import HomePart from "./Components/HomeComponents/HomePart/HomePart";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LoginPage from "./Components/LogInComponents/LoginPage/LoginPage";
+import { createContext, useState, useEffect } from "react";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import DashboardMain from "./Components/DashboardComponents/DashboardMainPart/DashboardMain";
+import { initializeFramework } from "./Components/LogInComponents/LoginManegment/LoginManegment";
+import firebase from "firebase/app";
+import "firebase/auth";
+import GalleryMainPart from "./Components/GalleryComponents/GallaryMainPart/GalleryMainPart";
 
 export const UserContext = createContext();
+function App() {
+	const [user, setUser] = useState(null);
 
-const App = () => {
+	useEffect(() => {
+		initializeFramework();
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				setUser(user);
+			} else {
+				setUser("");
+			}
+		});
+	}, []);
+	console.log(user?.displayName);
 
-  const [loggedInUser, setLoggedInUser] = useState({});
-
-
-  return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-
-      <Router>
-      <Navbar></Navbar>
-        <Switch>
-          
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/services">
-              <Services></Services>
-            </Route>
-            <Route path="/projects">
-              <Projects></Projects>
-            </Route>
-            <Route path="/contact">
-              <Footer></Footer>
-            </Route>
-          <PrivateRoute path="/dashboard">
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-
-      </Router>
-
-    </UserContext.Provider>
-
-  );
-};
+	return (
+		<UserContext.Provider value={[user, setUser]}>
+			<Router>
+				<Switch>
+					<Route exact path="/">
+						<HomePart />
+					</Route>
+					<Route path="/home">
+						<HomePart />
+					</Route>
+					<Route path="/gallery">
+						<GalleryMainPart />
+					</Route>
+					<PrivateRoute path="/dashboard">
+						<DashboardMain />
+					</PrivateRoute>
+					<Route path="/login">
+						<LoginPage />
+					</Route>
+				</Switch>
+			</Router>
+		</UserContext.Provider>
+	);
+}
 
 export default App;
-
-
-
-
-
-
-
-
-
-// https://github.com/Porgramming-Hero-web-course/complete-website-client-zabedbinsiraz
-
-// https://plumbing-hero.firebaseapp.com/
-
-// https://plumbing-hero.web.app/
-
-
-
-

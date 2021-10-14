@@ -1,0 +1,18 @@
+.actionDiv {
+	background-color: rgb(255, 242, 214);
+	width: 130px;
+	box-shadow: 10px 10px 10px black;
+}
+.actionDiv a {
+	display: block;
+	width: 130px;
+	text-align: center;
+	padding: 10px;
+	color: tomato;
+}
+.actionDiv a:hover {
+	text-decoration: none;
+	color: blue;
+	border-bottom: 2px solid tomato;
+	border-radius: 10px;
+}

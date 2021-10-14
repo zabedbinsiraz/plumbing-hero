@@ -1,0 +1,8 @@
+.loginPagePart {
+	min-height: 500px;
+	/* background-image: linear-gradient(147deg, #000000ca 0%, #434343 74%),
+		url(../../../images/loginBg.jpg); */
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

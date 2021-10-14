@@ -1,0 +1,52 @@
+.NavBarPart {
+	background-color: #ffffff;
+	height: 100px;
+	margin: 20px 0;
+}
+.logo img {
+	width: 200px;
+	height: 100px;
+}
+
+.navMenu a {
+	margin: 10px 25px;
+	color: rgb(248, 7, 7);
+	font-size: 20px;
+	width: 100px;
+}
+.navMenu a:hover {
+	text-decoration: none;
+	color: #0c4feb;
+}
+.nestedNav {
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+	top: 100px;
+}
+
+.profileBtn img {
+	width: 30px;
+	border-radius: 100px;
+	margin-right: 10px;
+}
+
+@media only screen and (max-width: 950px) {
+	.navMenu a {
+		display: block;
+		background-color: rgb(246, 200, 131);
+		width: 120px;
+		text-align: center;
+		padding: 10px;
+	}
+	.navMenu {
+		position: relative;
+		margin-left: auto;
+		z-index: 1;
+	}
+	.nestedNav {
+		position: absolute;
+		left: 0;
+		top: 110px;
+	}
+}

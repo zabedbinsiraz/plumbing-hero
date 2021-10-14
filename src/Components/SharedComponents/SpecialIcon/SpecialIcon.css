@@ -1,0 +1,15 @@
+.specialIcon {
+	display: flex;
+	align-items: center;
+	width: 30%;
+}
+.specialIcon:before,
+.specialIcon:after {
+	flex: 1;
+	content: "";
+	height: 2px;
+	background: #c75239;
+}
+.specialIcon img {
+	width: 40px;
+}

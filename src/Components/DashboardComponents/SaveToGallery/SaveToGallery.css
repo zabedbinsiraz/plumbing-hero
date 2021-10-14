@@ -1,0 +1,14 @@
+.saveToGalleryPart {
+	color: cornsilk;
+	font-weight: bold;
+	background-color: darkgrey;
+	min-height: 500px;
+	padding: 30px;
+	width: 50%;
+	margin: 0 auto;
+}
+@media only screen and (max-width: 900px) {
+	.saveToGalleryPart {
+		width: 80%;
+	}
+}
