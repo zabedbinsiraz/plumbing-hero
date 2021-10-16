@@ -5,6 +5,7 @@
 }
 .sidebar a {
 	color: beige;
+	text-decoration: none;
 }
 .sidebar a:hover {
 	text-decoration: none;

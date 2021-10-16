@@ -7,7 +7,7 @@ const BookingListForm = ({ booking }) => {
 			<Card
 				border="success"
 				style={{ width: "18rem" }}
-				className="ml-2 mr-2 mt-3"
+				className="ml-2 me-2 mt-3"
 			>
 				<Card.Header className="d-flex justify-content-between">
 					<img

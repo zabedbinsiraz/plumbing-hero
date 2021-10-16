@@ -35,7 +35,7 @@ const FooterLastPart = () => {
 				</a>
 
 				<a
-					href="https://www.youtube.com/channel/UCkmGfi4w60qQa34z-YwD3hQ"
+					href="https://www.youtube.com/channel/UCLR25UpWKMsF51oxZmYSx_w"
 					rel="noopener noreferrer"
 				>
 					<FontAwesomeIcon icon={faYoutubeSquare} />

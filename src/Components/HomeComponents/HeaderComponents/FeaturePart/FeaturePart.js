@@ -1,8 +1,8 @@
 import React from "react";
 import "./FeaturePart.css";
-import DiagnosticsImage from "../../../../images/water.jpg";
-import ServicesImage from "../../../../images/water.jpg";
-import MaintenanceImage from "../../../../images/water.jpg";
+import DiagnosticsImage from "../../../../images/Diagnostics.png";
+import ServicesImage from "../../../../images/services.png";
+import MaintenanceImage from "../../../../images/maintenance.png";
 import { motion } from "framer-motion";
 
 const FeaturePart = () => {

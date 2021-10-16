@@ -75,27 +75,30 @@ const MobileNavItem = ({ closeModal }) => {
 	return (
 		<div className="sidebar" onClick={closeNav}>
 			<Link to={`${url}/dashboardBookNow`}>
-				<div className="row    ml-4 align-items-center ">
+				<div className="row    ms-4 align-items-center ">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faCartPlus}
 					/>
 					Book Now
 				</div>
 			</Link>
 			<Link to={`${url}/bookingList`}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faListAlt}
 					/>
 					Booking List
 				</div>
 			</Link>
 			<Link to={`${url}/review`}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faClipboard}
 					/>
 					Review
@@ -106,18 +109,20 @@ const MobileNavItem = ({ closeModal }) => {
 
 			<br />
 			<Link to="/home">
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faHome}
 					/>
 					Home
 				</div>
 			</Link>
 			<Link onClick={logOutHandle}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faSignOutAlt}
 					/>
 					Log Out

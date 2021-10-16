@@ -1,6 +1,6 @@
 import React from "react";
 import "./ChooseUsPart.css";
-import choosePic from "../../../images/water.jpg";
+import choosePic from "../../../images/choosePic.jpg";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 import ChooseUsPartCard from "../ChooseUsPartCard/ChooseUsPartCard";
 

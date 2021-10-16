@@ -34,7 +34,7 @@ const DashboardServices = () => {
 				</div>
 			</div>
 			<div
-				className="row w-100 d-flex justify-content-center mt-5  "
+				className="w-100 d-flex flex-wrap justify-content-center  "
 				style={{ margin: "10px auto" }}
 			>
 				{services ? (

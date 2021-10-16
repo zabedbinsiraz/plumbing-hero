@@ -8,7 +8,7 @@ import {
 	faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import FooterLastPart from "../FooterLastPart/FooterLastPart";
-import logo from "../../../../images/water.jpg";
+import logo from "../../../../images/pHLogo.png";
 
 const FooterMain = () => {
 	return (

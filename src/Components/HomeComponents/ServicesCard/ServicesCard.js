@@ -6,20 +6,21 @@ import "./ServicesCard.css";
 import Rotate from "react-reveal/Rotate";
 
 const ServicesCard = ({ service }) => {
+	console.log(service);
 	const history = useHistory();
 	const bookNowHandle = (id) => {
 		history.push(`/dashboard/bookNow/${id}`);
 	};
 	return (
 		<Rotate top left>
-			<div className=" serviceCol">
+			<div className="serviceCol">
 				<div className="serviceNestedDiv">
 					<div className="serviceVector">
-						<img src={service.photo_url} alt="" />
+						<img src={service.imageURL} alt="" />
 					</div>
 					<div className="featureInfo">
-						<h2>{service.serviceName}</h2>
-						<p>{service.serviceDescription}</p>
+						<h2>{service.productName}</h2>
+						<p>{service.desc}</p>
 						<h6>{service.price} TK.</h6>
 					</div>
 					<div className="bookNowBtn mt-2">

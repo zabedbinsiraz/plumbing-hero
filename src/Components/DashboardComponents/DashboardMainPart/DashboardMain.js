@@ -35,10 +35,10 @@ const DashboardMain = () => {
 			<div className="mobileNav col-12">
 				<MobileSideBar />
 			</div>
-			<div className="col-md-2 pl-2 p4-2 desktopNav">
+			<div className="col-md-2 ps-2 pe-2 desktopNav">
 				<Sidebar />
 			</div>
-			<div className="col-md-10  mt-5 ml-auto mr-auto dashboardMainPart">
+			<div className="col-md-9 mt-5 dashboardMainPart">
 				<Switch>
 					<Route exact path={path}>
 						<DashboardServices />

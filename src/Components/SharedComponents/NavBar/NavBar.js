@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import logo from "../../../images/water.jpg";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import logo from "../../../images/pHLogo.png";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { UserContext } from "../../../App";
 import UserAction from "./UserAction/UserAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSortDown } from "@fortawesome/free-solid-svg-icons";
-import profileImage from "../../../images/water.jpg";
+import profileImage from "../../../images/profile.png";
 
 const NavBar = () => {
 	const [user, setUser] = useContext(UserContext);
@@ -21,12 +21,25 @@ const NavBar = () => {
 
 	return (
 		<Navbar expand="lg" className="NavBarPart">
-			<Navbar.Brand href="/home" className="logo">
+			<Container fluid>
+
+			<Navbar.Brand href="/home" className="text-dark fs-2">
+        <img
+          alt=""
+          src={logo}
+          width="45"
+          height="45"
+          className="d-inline-block "
+        />{' '}
+      Plumbing-Hero
+      </Navbar.Brand>
+
+			{/* <Navbar.Brand href="/home" className="logo">
 				<img src={logo} alt="" />
-			</Navbar.Brand>
+			</Navbar.Brand> */}
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="ml-auto">
+				<Nav className="ms-auto">
 					<div className="navMenu">
 						<Link to="/home">Home</Link>
 						<Link to="/dashboard">Dashboard</Link>
@@ -48,7 +61,7 @@ const NavBar = () => {
 								/>
 								Profile
 								<FontAwesomeIcon
-									className="ml-2"
+									className="ms-2"
 									icon={faSortDown}
 								/>
 							</Button>
@@ -65,6 +78,7 @@ const NavBar = () => {
 			>
 				<UserAction />
 			</div>
+			</Container>
 		</Navbar>
 	);
 };

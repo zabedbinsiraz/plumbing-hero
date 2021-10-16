@@ -45,25 +45,6 @@ const Sidebar = () => {
     }, [user.email]);
 
 
-	// useEffect(() => {
-	// 	axios({
-	// 		method: "get",
-	// 		url: "https://salty-retreat-17704.herokuapp.com/allAdmin",
-	// 		responseType: "stream",
-	// 	}).then(function (response) {
-	// 		setAllAdmin(response.data);
-	// 	});
-	// }, []);
-
-	// const [isAdmin, setIsAdmin] = useState(false);
-	// useEffect(() => {
-	// 	const check = allAdmin?.find(
-	// 		(admin) => admin.email === user.email
-	// 	);
-	// 	if (check) {
-	// 		setIsAdmin(true);
-	// 	}
-	// }, [allAdmin]);
 
 	const logOutHandle = () => {
 		logOutMethod();
@@ -84,37 +65,41 @@ const Sidebar = () => {
 					/>
 				</div>
 			</Link>
-			<Link to={`${url}/dashboardBookNow`}>
-				<div className="row    ml-4 align-items-center ">
+			 <Link to={`${url}/dashboardBookNow`}>
+				<div className="row mt-2 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					    style={{width:"50px"}}
+						className="me-2"
 						icon={faCartPlus}
 					/>
 					Book Now
 				</div>
 			</Link>
 			<Link to={`${url}/bookingList`}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faListAlt}
 					/>
 					Booking List
 				</div>
 			</Link>
 			<Link to={`${url}/review`}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faClipboard}
 					/>
 					Review
 				</div>
 			</Link>
 			<Link to={`${url}/saveToGallery`}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faPlus}
 					/>
 					Save to Gallery
@@ -124,18 +109,20 @@ const Sidebar = () => {
 			{admin && <AdminSideBar />}
 
 			<Link to="/home">
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faHome}
 					/>
 					Home
 				</div>
 			</Link>
 			<Link onClick={logOutHandle}>
-				<div className="row mt-4 ml-4 align-items-center">
+				<div className="row mt-4 ms-4 align-items-center">
 					<FontAwesomeIcon
-						className="mr-2"
+					style={{width:"50px"}}
+						className="me-2"
 						icon={faSignOutAlt}
 					/>
 					Log Out
