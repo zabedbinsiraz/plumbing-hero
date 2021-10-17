@@ -1,10 +1,10 @@
+import ParticlesBg from "particles-bg";
 import React, { useContext, useEffect } from "react";
-import "./LoginPage.css";
-import RegisterAccountForm from "../LoginForm/RegisterAccount";
-import NavBar from "../../SharedComponents/NavBar/NavBar";
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../../App";
-import ParticlesBg from "particles-bg";
+import NavBar from "../../SharedComponents/NavBar/NavBar";
+import RegisterAccountForm from "../LoginForm/RegisterAccount";
+import "./LoginPage.css";
 
 const LoginPage = () => {
 	const [user, setUser] = useContext(UserContext);

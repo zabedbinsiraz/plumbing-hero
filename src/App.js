@@ -1,14 +1,12 @@
-import "./App.css";
-import HomePart from "./Components/HomeComponents/HomePart/HomePart";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import LoginPage from "./Components/LogInComponents/LoginPage/LoginPage";
-import { createContext, useState, useEffect } from "react";
-import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-import DashboardMain from "./Components/DashboardComponents/DashboardMainPart/DashboardMain";
-import { initializeFramework } from "./Components/LogInComponents/LoginManegment/LoginManegment";
 import firebase from "firebase/app";
 import "firebase/auth";
-import GalleryMainPart from "./Components/GalleryComponents/GallaryMainPart/GalleryMainPart";
+import { createContext, useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import DashboardMain from "./Components/DashboardComponents/DashboardMainPart/DashboardMain";
+import HomePart from "./Components/HomeComponents/HomePart/HomePart";
+import { initializeFramework } from "./Components/LogInComponents/LoginManegment/LoginManegment";
+import LoginPage from "./Components/LogInComponents/LoginPage/LoginPage";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 function App() {
@@ -35,9 +33,6 @@ function App() {
 					</Route>
 					<Route path="/home">
 						<HomePart />
-					</Route>
-					<Route path="/gallery">
-						<GalleryMainPart />
 					</Route>
 					<PrivateRoute path="/dashboard">
 						<DashboardMain />

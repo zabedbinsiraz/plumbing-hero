@@ -1,23 +1,13 @@
-import React from "react";
-import "./Sidebar.css";
-import logo from "../../../images/water.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faListAlt,
-  faTasks,
-  faPlus,
-  faUserAlt,
-  faUserShield,
+  faListAlt, faPlus, faTasks, faUserShield
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
+import "./Sidebar.css";
+
 const AdminSideBar = () => {
   let { path, url } = useRouteMatch();
-
-
-//   Renamed .ml- = .ms- and .mr- = .me 
-//   Renamed .pl- = .ps- and .pr- = .pe- 
-//   Renamed .text-left and .text-right to .text-start and .text-end.
-
 
   return (
     <div>

@@ -7,7 +7,7 @@ const AllBookingListTable = ({ bookingData, changeStatus }) => {
 		<tbody>
 			<tr>
 				<td>{bookingData.name}</td>
-				<td>{bookingData.email}</td>
+				<td>{bookingData.buyerEmail}</td>
 				<td>{bookingData.productName}</td>
 				<td>{bookingData.type}</td>
 				<td>

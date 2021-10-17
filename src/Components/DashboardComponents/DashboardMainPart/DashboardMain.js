@@ -1,30 +1,20 @@
 import React, { useContext } from "react";
-import "./DashboardMain.css";
-import { UserContext } from "../../../App";
-import NavBar from "../../SharedComponents/NavBar/NavBar";
-import Sidebar from "../../SharedComponents/Sidebar/Sidebar";
 import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useParams,
-	useRouteMatch,
+	Route, Switch, useRouteMatch
 } from "react-router-dom";
-
-import BookingList from "../BookingList/BookingList";
-import AddTeamMember from "../AddTeamMember/AddTeamMember";
+import { UserContext } from "../../../App";
+import MobileSideBar from "../../SharedComponents/MobileSideBar/MobileSideBar";
+import Sidebar from "../../SharedComponents/Sidebar/Sidebar";
 import AddService from "../AddService/AddService";
 import AllOrders from "../AllBookingList/AllBookingList";
-import MakeAdmin from "../MakeAdmin/MakeAdmin";
-import Review from "../Review/Review";
+import BookingList from "../BookingList/BookingList";
 import BookNowPart from "../BookNowComponents/BookNowPart/BookNowPart";
-import Services from "../../HomeComponents/Services/Services";
 import DashboardServices from "../DashboardServices/DashboardServices";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageServices from "../ManageServices/ManageServices";
-import { Nav, Navbar } from "react-bootstrap";
-import MobileSideBar from "../../SharedComponents/MobileSideBar/MobileSideBar";
-import SaveToGallery from "../SaveToGallery/SaveToGallery";
+import Review from "../Review/Review";
+import "./DashboardMain.css";
+
 
 const DashboardMain = () => {
 	const [user, setUser] = useContext(UserContext);

@@ -1,13 +1,13 @@
 .sidebar {
-	background-image: linear-gradient(50deg, #19222a, #242a2a);
-	height: 100%;
-	margin-top: 0;
+  background-image: linear-gradient(50deg, #19222a, #242a2a);
+  height: 100%;
+  margin-top: 0;
 }
 .sidebar a {
-	color: beige;
-	text-decoration: none;
+  color: beige;
+  text-decoration: none;
 }
 .sidebar a:hover {
-	text-decoration: none;
-	color: rgb(241, 62, 31);
+  text-decoration: none;
+  color: rgb(241, 62, 31);
 }

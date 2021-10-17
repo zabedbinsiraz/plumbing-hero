@@ -1,9 +1,7 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import { useHistory } from "react-router";
-import Services from "../Services/Services";
-import "./ServicesCard.css";
 import Rotate from "react-reveal/Rotate";
+import { useHistory } from "react-router";
+import "./ServicesCard.css";
 
 const ServicesCard = ({ service }) => {
 	console.log(service);

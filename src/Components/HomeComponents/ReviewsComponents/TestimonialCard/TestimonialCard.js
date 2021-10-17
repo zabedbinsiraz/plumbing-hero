@@ -1,6 +1,6 @@
 import React from "react";
-import profileImage from "../../../../images/profile.png";
 import ReactStars from "react-rating-stars-component";
+import profileImage from "../../../../images/profile.png";
 
 const TestimonialCard = ({ testimonial }) => {
   console.log(testimonial);

@@ -1,6 +1,6 @@
 import React from "react";
-import "./SpecialIcon.css";
 import specialImage from "../../../images/special.png";
+import "./SpecialIcon.css";
 
 const SpecialIcon = () => {
 	return (

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../App";
-import BookingListForm from "./BookingListForm";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
+import BookingListForm from "./BookingListForm";
 
 const BookingList = () => {
 	const [user, setUser] = useContext(UserContext);
 	const [bookingList, setBookingList] = useState(null);
+	console.log("user",user);
 	
 
 	useEffect(() => {

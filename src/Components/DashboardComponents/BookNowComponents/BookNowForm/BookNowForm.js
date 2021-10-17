@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
-import SpecialIcon from "../../../SharedComponents/SpecialIcon/SpecialIcon";
 import { UserContext } from "../../../../App";
 
 const BookNowForm = ({ onSubmit, service }) => {
 	const [user, SetUser] = useContext(UserContext);
 	const { register, handleSubmit } = useForm();
+	console.log({user});
 
 	return (
 		<div>
@@ -18,7 +16,7 @@ const BookNowForm = ({ onSubmit, service }) => {
 						<Form.Label>Name</Form.Label>
 						<Form.Control
 							type="text"
-							value={user?.productName}
+							value={user?.displayName}
 							name="name"
 							ref={register({
 								required: true,
@@ -33,7 +31,7 @@ const BookNowForm = ({ onSubmit, service }) => {
 						<Form.Control
 							type="email"
 							value={user?.email}
-							name="email"
+							name="buyerEmail"
 							ref={register({
 								required: true,
 							})}

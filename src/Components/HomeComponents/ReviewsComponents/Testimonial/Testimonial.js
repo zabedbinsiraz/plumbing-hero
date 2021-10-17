@@ -1,7 +1,7 @@
 import React from "react";
-import "./Testimonial.css";
-import TestimonialSlider from "../TestimonialSlider/TestimonialSlider";
 import SpecialIcon from "../../../SharedComponents/SpecialIcon/SpecialIcon";
+import TestimonialSlider from "../TestimonialSlider/TestimonialSlider";
+import "./Testimonial.css";
 
 const Testimonial = () => {
 	return (

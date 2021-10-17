@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import congratulationPic from "../../../images/water.jpg";
+import congratulationPic from "../../../images/congratulation.png";
 
 const SuccessMessage = ({ successText }) => {
 	return (

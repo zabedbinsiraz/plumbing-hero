@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
+import { useHistory, useLocation } from "react-router";
+import { UserContext } from "../../../App";
+import searchBtn from "../../../images/water.jpg";
+import { GoogleSignInMethod } from "../LoginManegment/LoginManegment";
 import "./SocialLogin.css";
 
-import { GoogleSignInMethod } from "../LoginManegment/LoginManegment";
-import { UserContext } from "../../../App";
-import { useHistory, useLocation } from "react-router";
 
-import searchBtn from "../../../images/water.jpg";
 
 const SocialLogin = () => {
 	const [user, setUser] = useContext(UserContext);

@@ -1,9 +1,9 @@
-import React from "react";
-import "./FeaturePart.css";
-import DiagnosticsImage from "../../../../images/Diagnostics.png";
-import ServicesImage from "../../../../images/services.png";
-import MaintenanceImage from "../../../../images/maintenance.png";
 import { motion } from "framer-motion";
+import React from "react";
+import DiagnosticsImage from "../../../../images/Diagnostics.png";
+import MaintenanceImage from "../../../../images/maintenance.png";
+import ServicesImage from "../../../../images/services.png";
+import "./FeaturePart.css";
 
 const FeaturePart = () => {
 	return (

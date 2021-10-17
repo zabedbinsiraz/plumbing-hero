@@ -1,8 +1,7 @@
 import React from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddServiceForm = ({ handleUploadImage, onSubmit }) => {
@@ -40,7 +39,7 @@ const AddServiceForm = ({ handleUploadImage, onSubmit }) => {
               pauseOnHover
             />
             <Form.Control
-			type="file"
+              type="file"
               custom
               style={{ zIndex: "0" }}
               isValid

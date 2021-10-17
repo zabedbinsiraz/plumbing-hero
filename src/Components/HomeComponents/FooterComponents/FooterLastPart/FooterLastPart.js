@@ -1,13 +1,12 @@
-import React from "react";
-import "./FooterLastPart.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faFacebookSquare,
 	faTwitterSquare,
-	faYoutubeSquare,
+	faYoutubeSquare
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import "./FooterLastPart.css";
 
-import { Link as a } from "react-router-dom";
 
 const FooterLastPart = () => {
 	return (

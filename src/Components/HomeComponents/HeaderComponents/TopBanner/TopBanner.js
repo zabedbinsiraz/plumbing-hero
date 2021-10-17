@@ -1,7 +1,6 @@
 import React from "react";
-import "./TopBanner.css";
-import { Button } from "react-bootstrap";
 import { useHistory } from "react-router";
+import "./TopBanner.css";
 
 const TopBanner = () => {
 	let history = useHistory();

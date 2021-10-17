@@ -1,30 +1,17 @@
-import React from "react";
-import "./Sidebar.css";
-import logo from "../../../images/pHLogo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faListAlt,
-	faTasks,
-	faPlus,
-	faUserAlt,
-	faUserShield,
-	faClipboard,
-	faSignOutAlt,
-	faCartPlus,
-	faHome,
+	faCartPlus, faClipboard, faHome, faListAlt, faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import { useContext } from "react";
 import { UserContext } from "../../../App";
-import { useState } from "react";
-import { useEffect } from "react";
+import logo from "../../../images/pHLogo.png";
 import {
 	initializeFramework,
-	logOutMethod,
+	logOutMethod
 } from "../../LogInComponents/LoginManegment/LoginManegment";
-import axios from "axios";
 import AdminSideBar from "./AdminSideBar";
-import { Nav, Navbar } from "react-bootstrap";
+import "./Sidebar.css";
 
 const Sidebar = () => {
 	initializeFramework();
@@ -93,16 +80,6 @@ const Sidebar = () => {
 						icon={faClipboard}
 					/>
 					Review
-				</div>
-			</Link>
-			<Link to={`${url}/saveToGallery`}>
-				<div className="row mt-4 ms-4 align-items-center">
-					<FontAwesomeIcon
-					style={{width:"50px"}}
-						className="me-2"
-						icon={faPlus}
-					/>
-					Save to Gallery
 				</div>
 			</Link>
 			<hr style={{ borderBottom: "2px solid white" }} />

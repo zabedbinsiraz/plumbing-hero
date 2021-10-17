@@ -1,13 +1,10 @@
-import React, { useMemo, useState } from "react";
 import {
-	useStripe,
-	useElements,
-	CardNumberElement,
 	CardCvcElement,
-	CardExpiryElement,
+	CardExpiryElement, CardNumberElement, useElements, useStripe
 } from "@stripe/react-stripe-js";
-import "./PaymentMethodForm.css";
+import React, { useMemo, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
+import "./PaymentMethodForm.css";
 const useOptions = () => {
 	const options = useMemo(
 		() => ({

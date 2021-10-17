@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./TestimonialSlider.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
+import "./TestimonialSlider.css";
 
 const TestimonialSlider = () => {
 	const [testimonials, setTestimonials] = useState(null);

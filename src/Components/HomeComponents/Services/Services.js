@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./Services.css";
-import icon from "../../../images/water.jpg";
-import ServicesCard from "../ServicesCard/ServicesCard";
-import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
-import axios from "axios";
 import serviceLoader from "../../../Spinner/service.gif";
+import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
+import ServicesCard from "../ServicesCard/ServicesCard";
+import "./Services.css";
 
 const Services = () => {
 	const [services, setServices] = useState(null);

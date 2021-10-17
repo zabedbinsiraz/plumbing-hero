@@ -2,13 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import SpecialIcon from "../../../SharedComponents/SpecialIcon/SpecialIcon";
 import SuccessMessage from "../../../SharedComponents/SuccessMessage/SuccessMessage";
 import BookNowForm from "../BookNowForm/BookNowForm";
 import ProcessPayment from "../PaymentMethod/ProcessPayment/ProcessPayment";
-import "./BookNowPart.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const BookNowPart = () => {
 	let { id } = useParams();
@@ -55,6 +54,7 @@ const BookNowPart = () => {
 		BookNowData.status = "Pending";
 		BookNowData.imageURL = service.imageURL;
 		BookNowData.desc = service.desc;
+		console.log(BookNowData);
 		axios({
 			method: "post",
 			url: "https://infinite-hamlet-09689.herokuapp.com/addOrder",

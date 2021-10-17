@@ -1,8 +1,8 @@
 import React from "react";
-import "./ChooseUsPart.css";
 import choosePic from "../../../images/chooseUs.png";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 import ChooseUsPartCard from "../ChooseUsPartCard/ChooseUsPartCard";
+import "./ChooseUsPart.css";
 
 const ChooseUsPart = () => {
 	return (

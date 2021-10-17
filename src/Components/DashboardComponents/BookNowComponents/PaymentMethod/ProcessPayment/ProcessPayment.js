@@ -1,7 +1,6 @@
-import React from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { CardElement } from "@stripe/react-stripe-js";
+import React from "react";
 import SplitPaymentMethodForm from "../SplitPaymentMethodForm/SplitPaymentMethodForm";
 
 const stripePromise = loadStripe('pk_test_51IhRtHEhcJYUvIMrjiMQWyEhbIQ7BYGn3yQo6dr2aTm8DKJw7UkynlnP9bbGxOOtevThEDMKL0T2hyHKb3RGPQSl00q3VPTzXP');

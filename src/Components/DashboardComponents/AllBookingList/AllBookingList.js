@@ -1,9 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Form, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
-import AllBookingListTable from "./AllBookingListTable";
 import "./AllBookingList.css";
+import AllBookingListTable from "./AllBookingListTable";
 
 const AllBookingList = () => {
 	const [allBookingList, setAllBookingList] = useState(null);

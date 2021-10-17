@@ -1,11 +1,10 @@
-import React from "react";
-import "./MobileSideNav.css";
+import React, { useState } from "react";
+import Modal from "react-modal";
 import menuBar from "../../../images/menubar.png";
 import logo from "../../../images/pHLogo.png";
-
-import Modal from "react-modal";
-import Sidebar from "../Sidebar/Sidebar";
 import MobileNavItem from "./MobileNavItem";
+import "./MobileSideNav.css";
+
 
 const customStyles = {
 	content: {
@@ -22,7 +21,7 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const MobileSideBar = () => {
-	const [modalIsOpen, setIsOpen] = React.useState(false);
+	const [modalIsOpen, setIsOpen] = useState(false);
 	function openModal() {
 		setIsOpen(true);
 	}

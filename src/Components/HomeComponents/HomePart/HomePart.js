@@ -10,7 +10,6 @@ const HomePart = () => {
 	return (
 		<div>
 			<Header />
-
 			<AboutGarage />
 			<Services />
 			<ChooseUsPart />

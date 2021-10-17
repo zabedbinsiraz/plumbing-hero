@@ -1,6 +1,6 @@
 import React from "react";
-import "./ChooseUsPartCard.css";
 import iconChoose from "../../../images/special.png";
+import "./ChooseUsPartCard.css";
 
 const ChooseUsPartCard = () => {
 	return (

@@ -1,6 +1,6 @@
 import React from "react";
-import "./FooterHeader.css";
 import callBtn from "../../../../images/CallBtn.png";
+import "./FooterHeader.css";
 
 const FooterHeader = () => {
 	return (

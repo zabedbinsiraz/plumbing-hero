@@ -1,12 +1,10 @@
-import React from "react";
-import { useContext } from "react";
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../../App";
 import {
 	CustomLoginMethod,
 	initializeFramework,
-	oldUserLoginMethod,
+	oldUserLoginMethod
 } from "../LoginManegment/LoginManegment";
 import SocialLogin from "../SocialLogIn/SocialLogin";
 import CreateAccountForm from "./CreateAccountForm";

@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./FooterMain.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faArrowRight,
 	faMapMarker,
-	faPhoneAlt,
+	faPhoneAlt
 } from "@fortawesome/free-solid-svg-icons";
-import FooterLastPart from "../FooterLastPart/FooterLastPart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../../../images/pHLogo.png";
+import FooterLastPart from "../FooterLastPart/FooterLastPart";
+import "./FooterMain.css";
 
 const FooterMain = () => {
 	return (

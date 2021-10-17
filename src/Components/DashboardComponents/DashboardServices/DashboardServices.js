@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
-import ServicesCard from "../../HomeComponents/ServicesCard/ServicesCard";
 import serviceLoaderSpinner from "../../../Spinner/service.gif";
+import ServicesCard from "../../HomeComponents/ServicesCard/ServicesCard";
+import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 
 const DashboardServices = () => {
 	const [services, setServices] = useState(null);
@@ -14,7 +13,7 @@ const DashboardServices = () => {
 			console.log(data)
 			setServices(data)
 		  })
-	  }, [])
+	  }, []);
 
 	return (
 		<>

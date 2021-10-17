@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Button, Col, Form, Row } from "react-bootstrap";
 import axios from "axios";
-import { useHistory } from "react-router";
-import "./AddService.css";
-import AddServiceForm from "./AddServiceForm";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 import SuccessMessage from "../../SharedComponents/SuccessMessage/SuccessMessage";
-import { ToastContainer, toast } from "react-toastify";
+import "./AddService.css";
+import AddServiceForm from "./AddServiceForm";
 
 const AddService = () => {
 	const [photoUrl, setPhotoUrl] = useState(null);

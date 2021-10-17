@@ -1,8 +1,8 @@
 import React from "react";
-import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
-import "./AboutGarage.css";
 import aboutPic1 from "../../../images/aboutUs1.jpeg";
 import aboutPic2 from "../../../images/aboutUs2.jpeg";
+import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
+import "./AboutGarage.css";
 
 const AboutGarage = () => {
 	return (

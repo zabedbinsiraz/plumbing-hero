@@ -1,27 +1,14 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faListAlt,
-	faTasks,
-	faPlus,
-	faUserAlt,
-	faUserShield,
-	faClipboard,
-	faSignOutAlt,
-	faCartPlus,
-	faHome,
+	faCartPlus, faClipboard, faHome, faListAlt, faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import { useContext } from "react";
 import { UserContext } from "../../../App";
-import { useState } from "react";
-import { useEffect } from "react";
 import {
 	initializeFramework,
-	logOutMethod,
+	logOutMethod
 } from "../../LogInComponents/LoginManegment/LoginManegment";
-import axios from "axios";
-import { Nav, Navbar } from "react-bootstrap";
 import AdminSideBar from "../Sidebar/AdminSideBar";
 
 const MobileNavItem = ({ closeModal }) => {
@@ -32,16 +19,6 @@ const MobileNavItem = ({ closeModal }) => {
 
 	const [admin, setAdmin] = useState(null);
 
-	// useEffect(() => {
-	// 	axios({
-	// 		method: "get",
-	// 		url: "https://salty-retreat-17704.herokuapp.com/allAdmin",
-	// 		responseType: "stream",
-	// 	}).then(function (response) {
-	// 		setAllAdmin(response.data);
-	// 	});
-	// }, []);
-
 	useEffect(() => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/allAdmin?email=' + user.email)
             .then(res => res.json())
@@ -51,16 +28,6 @@ const MobileNavItem = ({ closeModal }) => {
                 console.log(data[0], 'data')
             })
     }, [user.email]);
-
-	// const [isAdmin, setIsAdmin] = useState(false);
-	// useEffect(() => {
-	// 	const check = allAdmin?.find(
-	// 		(admin) => admin.email === user.email
-	// 	);
-	// 	if (check) {
-	// 		setIsAdmin(true);
-	// 	}
-	// }, [allAdmin]);
 
 	const closeNav = () => {
 		closeModal();

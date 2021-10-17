@@ -1,13 +1,14 @@
-import React from "react";
-import { Col, Form, Row, FormControl, InputGroup, InputGroupText } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ReactStars from "react-rating-stars-component";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { UserContext } from './../../../App';
 
 const ReviewForm = ({ handleUploadImage, onSubmit, ratingChanged }) => {
   const { register, handleSubmit } = useForm();
+  const [user,setUser] = useContext(UserContext);
 
   return (
     <div>
@@ -17,7 +18,7 @@ const ReviewForm = ({ handleUploadImage, onSubmit, ratingChanged }) => {
             <Form.Label> Name</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Your Name"
+              value={user?.displayName}
               name="name"
               ref={register({
                 required: true,
@@ -28,7 +29,7 @@ const ReviewForm = ({ handleUploadImage, onSubmit, ratingChanged }) => {
             <Form.Label> Email</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter Your Email"
+              value={user?.email}
               name="email"
               ref={register({
                 required: true,
