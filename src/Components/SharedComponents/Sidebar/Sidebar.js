@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import logo from "../../../images/water.jpg";
+import logo from "../../../images/pHLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faListAlt,

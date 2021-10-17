@@ -12,14 +12,16 @@ import { ToastContainer, toast } from "react-toastify";
 const Review = () => {
 	const [photoUrl, setPhotoUrl] = useState(null);
 	const [isSubmit, setIsSubmit] = useState(false);
+	const [rating,setRating] = useState({});
 	const onSubmit = (data) => {
 		const reviewData = { ...data };
-		reviewData.photo_url = photoUrl;
+		reviewData.photo = photoUrl;
 		reviewData.date = new Date().toLocaleDateString();
+		reviewData.ratings = rating.rate;
 
 		axios({
 			method: "post",
-			url: "https://salty-retreat-17704.herokuapp.com/review",
+			url: "https://infinite-hamlet-09689.herokuapp.com/addReview",
 			data: reviewData,
 		});
 		setIsSubmit(true);
@@ -30,7 +32,7 @@ const Review = () => {
 		toast("Pleas 😶 wait 5 seconde for upload icon");
 		console.log(event.target.files[0]);
 		const ImageData = new FormData();
-		ImageData.set("key", "85dea4d9aec0e6e2a9113a6126e66123");
+		ImageData.set("key", "b437b2988a9a7d177ebe83d13b4dc437");
 		ImageData.append("image", event.target.files[0]);
 
 		axios.post("https://api.imgbb.com/1/upload", ImageData)
@@ -42,6 +44,11 @@ const Review = () => {
 				console.log(error);
 			});
 	};
+
+	const ratingChanged = (newRating) => {
+        setRating({ rate: newRating });
+        console.log(newRating)
+    };
 
 	return (
 		<>
@@ -65,6 +72,7 @@ const Review = () => {
 								handleUploadImage
 							}
 							onSubmit={onSubmit}
+							ratingChanged={ratingChanged}
 						/>
 					)}
 				</div>

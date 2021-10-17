@@ -1,7 +1,7 @@
 import React from "react";
 import "./MobileSideNav.css";
-import menuBar from "../../../images/water.jpg";
-import logo from "../../../images/water.jpg";
+import menuBar from "../../../images/menubar.png";
+import logo from "../../../images/pHLogo.png";
 
 import Modal from "react-modal";
 import Sidebar from "../Sidebar/Sidebar";

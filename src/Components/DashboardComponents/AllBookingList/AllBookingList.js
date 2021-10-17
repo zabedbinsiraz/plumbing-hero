@@ -7,15 +7,6 @@ import "./AllBookingList.css";
 
 const AllBookingList = () => {
 	const [allBookingList, setAllBookingList] = useState(null);
-	// useEffect(() => {
-	// 	axios({
-	// 		method: "get",
-	// 		url: `https://salty-retreat-17704.herokuapp.com/allBookingList`,
-	// 		responseType: "stream",
-	// 	}).then(function (response) {
-	// 		setAllBookingList(response.data);
-	// 	});
-	// }, []);
 
 	useEffect(() => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/orders')

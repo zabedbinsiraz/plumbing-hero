@@ -41,13 +41,13 @@ const ManageServices = () => {
 							<tr>
 								<td>
 									{
-										service.serviceName
+										service.productName
 									}
 								</td>
 								<td>{service.price}</td>
 								<td>
 									{
-										service.serviceDescription
+										service.desc
 									}
 								</td>
 								<td>

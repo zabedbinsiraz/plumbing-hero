@@ -52,12 +52,6 @@ const FooterMain = () => {
 							<FontAwesomeIcon
 								icon={faArrowRight}
 							/>
-							<Link> Gallery</Link>
-						</div>
-						<div className="link d-flex align-items-center">
-							<FontAwesomeIcon
-								icon={faArrowRight}
-							/>
 							<Link to="/dashboard">
 								Dashboard
 							</Link>
@@ -74,7 +68,7 @@ const FooterMain = () => {
 								color: "tomato",
 							}}
 						/>
-						<h6>Sylhet Sadar</h6>
+						<h6>Sylhet - Sadar</h6>
 					</div>
 					<div className="phoneNumber   d-flex align-items-center justify-content-center">
 						<FontAwesomeIcon

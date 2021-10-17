@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import { UserContext } from "../../../App";
 import BookingListForm from "./BookingListForm";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
@@ -8,15 +7,6 @@ const BookingList = () => {
 	const [user, setUser] = useContext(UserContext);
 	const [bookingList, setBookingList] = useState(null);
 	
-	// useEffect(() => {
-	// 	axios({
-	// 		method: "get",
-	// 		url: `https://salty-retreat-17704.herokuapp.com/bookingList/${user?.email}`,
-	// 		responseType: "stream",
-	// 	}).then(function (response) {
-	// 		setBookingList(response.data);
-	// 	});
-	// }, [user]);
 
 	useEffect(() => {
         fetch('https://infinite-hamlet-09689.herokuapp.com/allBookings?email=' + user.email)

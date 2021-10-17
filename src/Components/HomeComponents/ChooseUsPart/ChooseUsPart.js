@@ -1,13 +1,13 @@
 import React from "react";
 import "./ChooseUsPart.css";
-import choosePic from "../../../images/choosePic.jpg";
+import choosePic from "../../../images/chooseUs.png";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 import ChooseUsPartCard from "../ChooseUsPartCard/ChooseUsPartCard";
 
 const ChooseUsPart = () => {
 	return (
 		<div style={{ marginTop: "100px" }}>
-			<div className="  row w-100  ml-auto mr-auto">
+			<div className="  row w-100  ms-auto me-auto">
 				<div className=" choosePic col-md-4 offset-md-1">
 					<img src={choosePic} alt="" />
 				</div>

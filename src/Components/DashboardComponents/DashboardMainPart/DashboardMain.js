@@ -58,17 +58,8 @@ const DashboardMain = () => {
 					<Route path={`${path}/review`}>
 						<Review />
 					</Route>
-					<Route path={`${path}/bookingList`}>
-						<BookingList />
-					</Route>
-					<Route path={`${path}/addMember`}>
-						<AddTeamMember />
-					</Route>
 					<Route path={`${path}/addService`}>
 						<AddService />
-					</Route>
-					<Route path={`${path}/saveToGallery`}>
-						<SaveToGallery />
 					</Route>
 					<Route path={`${path}/addAdmin`}>
 						<MakeAdmin />

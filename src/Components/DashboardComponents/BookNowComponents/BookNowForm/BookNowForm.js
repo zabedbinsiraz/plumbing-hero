@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import SpecialIcon from "../../../SharedComponents/SpecialIcon/SpecialIcon";
@@ -13,12 +13,12 @@ const BookNowForm = ({ onSubmit, service }) => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<Form.Row>
+				<Row>
 					<Form.Group as={Col}>
 						<Form.Label>Name</Form.Label>
 						<Form.Control
 							type="text"
-							value={user?.name}
+							value={user?.displayName}
 							name="name"
 							ref={register({
 								required: true,
@@ -40,8 +40,8 @@ const BookNowForm = ({ onSubmit, service }) => {
 							readOnly
 						/>
 					</Form.Group>
-				</Form.Row>
-				<Form.Row>
+				</Row>
+				<Row>
 					<Form.Group as={Col}>
 						<Form.Label>City</Form.Label>
 						<Form.Control
@@ -65,16 +65,16 @@ const BookNowForm = ({ onSubmit, service }) => {
 							readOnly
 						/>
 					</Form.Group>
-				</Form.Row>
+				</Row>
 
-				<Form.Row>
+				<Row>
 					<Form.Group as={Col}>
 						<Form.Label>Service Name</Form.Label>
 						<Form.Control
 							type="text"
 							// placeholder="service Name"
 							name="serviceName"
-							value={service?.serviceName}
+							value={service?.productName}
 							ref={register({
 								required: true,
 							})}
@@ -94,8 +94,8 @@ const BookNowForm = ({ onSubmit, service }) => {
 							readOnly
 						/>
 					</Form.Group>
-				</Form.Row>
-				<button class="submitButton mt-5">
+				</Row>
+				<button type="submit" class="submitButton mt-5">
 					Next
 					<div class="SubmitButton__horizontal"></div>
 					<div class="submitButton__vertical"></div>

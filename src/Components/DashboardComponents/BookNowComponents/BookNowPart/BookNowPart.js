@@ -19,15 +19,6 @@ const BookNowPart = () => {
 
 	const [service, setService] = useState(null);
 
-	// useEffect(() => {
-	// 	axios({
-	// 		method: "get",
-	// 		url: `https://salty-retreat-17704.herokuapp.com/service/${id}`,
-	// 		responseType: "stream",
-	// 	}).then(function (response) {
-	// 		setService(response.data[0]);
-	// 	});
-	// }, [id]);
 
 	useEffect(() => {
 		fetch(`https://infinite-hamlet-09689.herokuapp.com/service/${id}`)
@@ -62,11 +53,11 @@ const BookNowPart = () => {
 		const BookNowData = { ...bookingData, ...paymentData };
 		BookNowData.Date = new Date().toLocaleDateString();
 		BookNowData.status = "Pending";
-		BookNowData.servicePhoto = service.photo_url;
-		BookNowData.serviceDescription = service.serviceDescription;
+		BookNowData.imageURL = service.imageURL;
+		BookNowData.desc = service.desc;
 		axios({
 			method: "post",
-			url: "https://salty-retreat-17704.herokuapp.com/bookNow",
+			url: "https://infinite-hamlet-09689.herokuapp.com/addOrder",
 			data: BookNowData,
 		}).then((result) => {
 			console.log(result);

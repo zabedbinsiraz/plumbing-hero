@@ -23,7 +23,7 @@ const NavBar = () => {
 		<Navbar expand="lg" className="NavBarPart">
 			<Container fluid>
 
-			<Navbar.Brand href="/home" className="text-dark fs-2">
+			<Navbar.Brand href="/home" className="fs-2" >
         <img
           alt=""
           src={logo}
@@ -31,19 +31,16 @@ const NavBar = () => {
           height="45"
           className="d-inline-block "
         />{' '}
-      Plumbing-Hero
+      Plumbing-<span style={{color:"rgb(248, 7, 7)"}}>Hero</span>
       </Navbar.Brand>
 
-			{/* <Navbar.Brand href="/home" className="logo">
-				<img src={logo} alt="" />
-			</Navbar.Brand> */}
+			
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="ms-auto">
 					<div className="navMenu">
 						<Link to="/home">Home</Link>
 						<Link to="/dashboard">Dashboard</Link>
-						<Link to="/gallery">Gallery</Link>
 						<Link to="/dashboard/dashboardBookNow">
 							Services
 						</Link>

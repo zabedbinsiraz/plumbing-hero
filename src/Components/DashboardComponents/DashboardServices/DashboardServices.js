@@ -6,15 +6,6 @@ import serviceLoaderSpinner from "../../../Spinner/service.gif";
 
 const DashboardServices = () => {
 	const [services, setServices] = useState(null);
-	// useEffect(() => {
-	// 	axios({
-	// 		method: "get",
-	// 		url: "https://salty-retreat-17704.herokuapp.com/services",
-	// 		responseType: "stream",
-	// 	}).then(function (response) {
-	// 		setServices(response.data);
-	// 	});
-	// }, []);
 
 	useEffect(() => {
 		fetch('https://infinite-hamlet-09689.herokuapp.com/services')

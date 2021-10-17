@@ -7,7 +7,7 @@ import {
 	CardExpiryElement,
 } from "@stripe/react-stripe-js";
 import "./PaymentMethodForm.css";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 const useOptions = () => {
 	const options = useMemo(
 		() => ({
@@ -70,7 +70,7 @@ const SplitPaymentMethodForm = ({ totalAmount, setPaymentData }) => {
 	return (
 		<div className="paymentForm">
 			<Form onSubmit={handleSubmit}>
-				<Form.Row>
+				<Row>
 					<Form.Group
 						as={Col}
 						className=" cardRow p-0"
@@ -95,8 +95,8 @@ const SplitPaymentMethodForm = ({ totalAmount, setPaymentData }) => {
 							}}
 						/>
 					</Form.Group>
-				</Form.Row>
-				<Form.Row>
+				</Row>
+				<Row>
 					<Form.Group
 						as={Col}
 						className=" cardRow p-0"
@@ -121,8 +121,8 @@ const SplitPaymentMethodForm = ({ totalAmount, setPaymentData }) => {
 							}}
 						/>
 					</Form.Group>
-				</Form.Row>
-				<Form.Row>
+				</Row>
+				<Row>
 					<Form.Group
 						as={Col}
 						className=" cardRow p-0"
@@ -147,14 +147,14 @@ const SplitPaymentMethodForm = ({ totalAmount, setPaymentData }) => {
 							}}
 						/>
 					</Form.Group>
-				</Form.Row>
+				</Row>
 
 				{paymentError && (
-					<Form.Row className=" df-lex  justify-content-center">
+					<Row className=" df-lex  justify-content-center">
 						<div className="text-danger text-center">
 							{paymentError}
 						</div>
-					</Form.Row>
+					</Row>
 				)}
 
 				<button class="submitButton mt-5">

@@ -7,12 +7,12 @@ const BookingListForm = ({ booking }) => {
 			<Card
 				border="success"
 				style={{ width: "18rem" }}
-				className="ml-2 me-2 mt-3"
+				className="ms-2 me-2 mt-3"
 			>
 				<Card.Header className="d-flex justify-content-between">
 					<img
 						style={{ width: "50px" }}
-						src={booking.servicePhoto}
+						src={booking.imageURL}
 						alt=""
 					/>
 					<Button variant="primary">
@@ -21,10 +21,10 @@ const BookingListForm = ({ booking }) => {
 				</Card.Header>
 				<Card.Body>
 					<Card.Title>
-						{booking.serviceName}
+						{booking.productName}
 					</Card.Title>
 					<Card.Text>
-						{booking.serviceDescription}
+						{booking.desc}
 					</Card.Text>
 				</Card.Body>
 			</Card>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form,Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 import SuccessMessage from "../../SharedComponents/SuccessMessage/SuccessMessage";
@@ -39,7 +39,7 @@ const MakeAdmin = () => {
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Row>
+          <Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -51,8 +51,8 @@ const MakeAdmin = () => {
                 })}
               />
             </Form.Group>
-          </Form.Row>
-          <Form.Row>
+          </Row>
+          <Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -64,7 +64,7 @@ const MakeAdmin = () => {
                 })}
               />
             </Form.Group>
-          </Form.Row>
+          </Row>
           <button class="submitButton">
             Submit
             <div class="SubmitButton__horizontal"></div>

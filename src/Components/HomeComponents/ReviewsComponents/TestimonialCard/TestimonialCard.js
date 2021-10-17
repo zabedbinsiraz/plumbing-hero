@@ -1,21 +1,26 @@
 import React from "react";
-import profileImage from "../../../../images/water.jpg";
+import profileImage from "../../../../images/profile.png";
+import ReactStars from "react-rating-stars-component";
 
 const TestimonialCard = ({ testimonial }) => {
-	return (
-		<div>
-			<img
-				style={{ width: "100px", height: "130px" }}
-				src={testimonial.photo_url || profileImage}
-				alt=""
-			/>
-			<div className="TestimonialCarousel">
-				<h3>{testimonial.name}</h3>
-				<h4>{testimonial.date}</h4>
-				<p>{testimonial.comment}</p>
-			</div>
-		</div>
-	);
+  console.log(testimonial);
+  return (
+    <div className="text-center">
+      <img
+        style={{ width: "100px", height: "130px" }}
+        src={testimonial.photo || profileImage}
+        alt=""
+      />
+      <div className="TestimonialCarousel">
+        <h3>{testimonial.name}</h3>
+        <h4>{testimonial.date}</h4>
+        <p>{testimonial.desc}</p>
+        <p>
+          <ReactStars count={testimonial.ratings} size={24} color="#ffd700" />
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default TestimonialCard;

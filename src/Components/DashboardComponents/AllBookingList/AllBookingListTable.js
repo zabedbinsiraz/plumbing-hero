@@ -2,12 +2,13 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 const AllBookingListTable = ({ bookingData, changeStatus }) => {
+	console.log(bookingData);
 	return (
 		<tbody>
 			<tr>
 				<td>{bookingData.name}</td>
 				<td>{bookingData.email}</td>
-				<td>{bookingData.serviceName}</td>
+				<td>{bookingData.productName}</td>
 				<td>{bookingData.type}</td>
 				<td>
 					<Form.Control

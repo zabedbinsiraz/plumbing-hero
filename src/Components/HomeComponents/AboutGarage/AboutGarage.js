@@ -1,15 +1,15 @@
 import React from "react";
 import SpecialIcon from "../../SharedComponents/SpecialIcon/SpecialIcon";
 import "./AboutGarage.css";
-import garagePic1 from "../../../images/gragePic1 (1).jpg";
-import garagePic2 from "../../../images/gragePic2.jpg";
+import aboutPic1 from "../../../images/aboutUs1.jpeg";
+import aboutPic2 from "../../../images/aboutUs2.jpeg";
 
 const AboutGarage = () => {
 	return (
 		<div className="container">
 			<div className=" row w-100">
 				<div className="col-lg-6 aboutGarage">
-					<h3>About Our Garage</h3>
+					<h3>About Our Company</h3>
 					<div className="aboutPartIcon">
 						<SpecialIcon />
 					</div>
@@ -37,7 +37,7 @@ const AboutGarage = () => {
 								possible wherever we are
 								in our office hours. Our
 								head office is at
-								Rangpur Sadar. In
+								Sylhet City. In
 								addition, we have two
 								branches in each
 								district. Where you can
@@ -50,12 +50,12 @@ const AboutGarage = () => {
 				<div className="col-lg-5 garagePictures">
 					<img
 						className="image1"
-						src={garagePic1}
+						src={aboutPic2}
 						alt=""
 					/>
 					<img
 						className="image2"
-						src={garagePic2}
+						src={aboutPic1}
 						alt=""
 					/>
 				</div>
