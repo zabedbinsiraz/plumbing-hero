@@ -18,7 +18,7 @@ const BookNowForm = ({ onSubmit, service }) => {
 						<Form.Label>Name</Form.Label>
 						<Form.Control
 							type="text"
-							value={user?.displayName}
+							value={user?.productName}
 							name="name"
 							ref={register({
 								required: true,
@@ -73,7 +73,7 @@ const BookNowForm = ({ onSubmit, service }) => {
 						<Form.Control
 							type="text"
 							// placeholder="service Name"
-							name="serviceName"
+							name="productName"
 							value={service?.productName}
 							ref={register({
 								required: true,
