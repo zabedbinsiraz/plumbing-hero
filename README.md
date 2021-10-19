@@ -1,16 +1,16 @@
-#Plumbing-Hero
+# Plumbing-Hero
+
+![Plumbing-Hero Project](/src/images/plumbingHeroSS1.png)
 
 Web app purpose: It is a plumbing related authentic servicing company. Any type of domestic or company plumbing task we serve properly and professionally.
 we have experienced workers,engineers .So we provide you a better service without any confusion.
 
-Used Technology: 
+Used Technology:
 
+• Dynamic & responsive website with stripe payment gateway.
 
-•	Dynamic & responsive website with stripe payment gateway.
+• Separate dashboard for users and admin panels.
 
-•	Separate dashboard for users and admin panels.
+• Technology: React, NodeJS, MongoDB, Express, Material-UI, Firebase, Heroku
 
-•	Technology: React, NodeJS, MongoDB, Express, Material-UI, Firebase, Heroku
-
-please visit   https://plumbing-hero.web.app/
-
+please visit https://plumbing-hero.web.app/
